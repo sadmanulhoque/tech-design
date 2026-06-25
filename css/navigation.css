@@ -1,3 +1,10 @@
+/* =============================================
+   NAVIGATION — navigation.css
+   Desktop: horizontal bar with hover mega menus
+   Mobile: overridden entirely in responsive.css
+============================================= */
+
+/* Hidden by default; shown on desktop */
 .cat-nav {
   display: none;
   background: var(--color-white);
@@ -12,6 +19,12 @@
   }
 }
 
+/* Mobile drawer header — hidden on desktop */
+.cat-nav-mobile-header {
+  display: none;
+}
+
+/* ── Desktop container & list ── */
 .cat-nav .container {
   display: flex;
   align-items: stretch;
@@ -63,7 +76,7 @@
   color: var(--color-primary);
 }
 
-/* Dropdown */
+/* ── Desktop dropdown (hover-triggered) ── */
 .cat-nav-dropdown {
   position: absolute;
   top: 100%;
@@ -99,7 +112,7 @@
   color: var(--color-primary);
 }
 
-/* Mega menu */
+/* ── Mega menu ── */
 .cat-nav-mega {
   min-width: 700px;
   padding: 20px 24px;

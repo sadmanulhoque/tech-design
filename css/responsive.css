@@ -1,6 +1,10 @@
-/* ===== HEADER BREAKPOINTS ===== */
+/* =============================================
+   RESPONSIVE — responsive.css
+============================================= */
 
+/* ===== MOBILE DRAWER (< 1024px) ===== */
 @media (max-width: 1023px) {
+
   .mobile-toggle {
     display: flex;
   }
@@ -21,89 +25,205 @@
     display: none;
   }
 
-  /* Cat nav becomes a fixed drawer on mobile */
+  /* ─────────────────────────────────────
+     THE DRAWER
+     z-index 1100 = above overlay (1050)
+     and above everything else
+  ───────────────────────────────────── */
   .cat-nav {
-    display: block;
+    display: flex !important;
+    flex-direction: column;
     position: fixed;
     top: 0;
-    left: -280px;
-    width: 280px;
-    height: 100vh;
-    background: var(--color-white);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
-    z-index: 999;
-    overflow-y: auto;
-    transition: left 0.3s ease;
+    left: -320px;
+    width: 300px;
+    height: 100%;
+    background: #ffffff;
+    z-index: 1100;
+    transition: left 0.28s ease;
     border-bottom: none;
+    overflow: hidden;
+    box-shadow: none;
   }
 
   .cat-nav.open {
     left: 0;
+    box-shadow: 6px 0 30px rgba(0, 0, 0, 0.2);
   }
 
-  .cat-nav-list {
-    flex-direction: column;
-    padding-top: 12px;
-  }
-
-  .cat-nav-item > a {
-    height: 44px;
-    padding: 0 20px;
-    border-bottom: 1px solid var(--color-border-light);
-    justify-content: space-between;
-  }
-
-  .cat-nav-item > a i {
-    font-size: 12px;
-  }
-
-  .cat-nav-dropdown {
-    position: static;
-    box-shadow: none;
-    background: var(--color-bg);
-    border-radius: 0;
-    padding: 0 20px 16px;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-    display: none;
-    min-width: auto;
-  }
-
-  .cat-nav-item:hover .cat-nav-dropdown {
-    display: none;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-  }
-
-  .cat-nav-item.open .cat-nav-dropdown {
-    display: block;
-  }
-
-  .cat-nav-mega-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-
-  .cat-nav-item-right {
-    display: none;
-  }
-
-  /* Mobile overlay when menu is open */
+  /* ─────────────────────────────────────
+     OVERLAY
+     Sits between page and drawer.
+     Must NOT overlap the drawer itself.
+  ───────────────────────────────────── */
   .nav-overlay {
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.5);
-    z-index: 998;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1050;  /* above page, below drawer */
   }
 
   .nav-overlay.show {
     display: block;
   }
+
+  /* ─────────────────────────────────────
+     SCROLLABLE LIST AREA
+  ───────────────────────────────────── */
+  .cat-nav .container {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0;
+    background: #ffffff;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* ─────────────────────────────────────
+     LIST
+  ───────────────────────────────────── */
+  .cat-nav-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: #ffffff;
+  }
+
+  /* ─────────────────────────────────────
+     TOP-LEVEL ITEMS
+  ───────────────────────────────────── */
+  .cat-nav-item {
+    position: static;
+    border-bottom: 1px solid #eeeeee;
+  }
+
+  .cat-nav-item > a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    padding: 0 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #1a1a1a;
+    background: #ffffff;
+    white-space: normal;
+    border-bottom: none;
+  }
+
+  .cat-nav-item > a:hover {
+    background: #f9f9f9;
+  }
+
+  /* Chevron icon */
+  .cat-nav-item > a i.fa-chevron-down {
+    font-size: 12px;
+    color: #aaa;
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+  }
+
+  /* Rotate when open */
+  .cat-nav-item.open > a i.fa-chevron-down {
+    transform: rotate(180deg);
+  }
+
+  /* ─────────────────────────────────────
+     DROPDOWN PANEL
+     Reset ALL desktop styles with !important
+     then control via JS .open class
+  ───────────────────────────────────── */
+  .cat-nav-dropdown {
+    /* kill every desktop property */
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    z-index: auto !important;
+    /* appearance */
+    background: #f4f5f7 !important;
+    border-top: 1px solid #e8e8e8;
+    min-width: 0 !important;
+    padding: 0 !important;
+    /* hidden until .open — use max-height for smooth animation */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  /* JS adds .open to parent .cat-nav-item */
+  .cat-nav-item.open > .cat-nav-dropdown {
+    max-height: 600px; /* large enough for any content */
+  }
+
+  /* CRITICAL: disable the CSS :hover trigger on mobile */
+  .cat-nav-item:hover > .cat-nav-dropdown {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    /* still hidden unless .open */
+    max-height: 0;
+    overflow: hidden;
+  }
+
+  .cat-nav-item.open:hover > .cat-nav-dropdown {
+    max-height: 600px;
+  }
+
+  /* ─────────────────────────────────────
+     MEGA GRID inside dropdown
+  ───────────────────────────────────── */
+  .cat-nav-mega-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    padding: 8px 16px 16px;
+  }
+
+  /* Section headings */
+  .cat-nav-mega-col h4 {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    margin: 10px 0 4px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #ffe8cc;
+  }
+
+  /* Sub-links */
+  .cat-nav-dropdown a,
+  .cat-nav-mega-col a {
+    display: block;
+    padding: 6px 4px 6px 6px;
+    font-size: 13px;
+    color: #555;
+    font-weight: 400;
+    background: transparent;
+    border-bottom: none;
+    transition: color 0.15s, padding-left 0.15s;
+  }
+
+  .cat-nav-dropdown a:hover,
+  .cat-nav-mega-col a:hover {
+    color: var(--color-primary);
+    padding-left: 10px;
+    background: transparent;
+  }
+
+  /* Hide desktop-only "Offers" link */
+  .cat-nav-item-right {
+    display: none;
+  }
 }
 
+/* Desktop: always hide overlay */
 @media (min-width: 1024px) {
   .nav-overlay {
     display: none !important;

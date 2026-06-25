@@ -1,80 +1,107 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-  /* ============================
-     MOBILE TOGGLE (Side Menu)
-  ============================ */
   var mobileToggle = document.querySelector('.mobile-toggle');
-  var catNav = document.querySelector('.cat-nav');
-  var navOverlay = document.querySelector('.nav-overlay');
+  var catNav       = document.querySelector('.cat-nav');
+  var navOverlay   = document.querySelector('.nav-overlay');
+  var catNavClose  = document.querySelector('.cat-nav-close');
 
-  if (mobileToggle && catNav) {
-    mobileToggle.addEventListener('click', function () {
-      catNav.classList.toggle('open');
-      if (navOverlay) navOverlay.classList.toggle('show');
-      var icon = this.querySelector('i');
-      icon.className = catNav.classList.contains('open') ? 'fas fa-times' : 'fas fa-bars';
-    });
+  /* ── Open / Close helpers ── */
+  function openDrawer() {
+    catNav.classList.add('open');
+    navOverlay.classList.add('show');
+    document.body.style.overflow = 'hidden';
+    var icon = mobileToggle.querySelector('i');
+    if (icon) icon.className = 'fas fa-times';
+  }
 
-    if (navOverlay) {
-      navOverlay.addEventListener('click', function () {
-        catNav.classList.remove('open');
-        navOverlay.classList.remove('show');
-        var icon = mobileToggle.querySelector('i');
-        if (icon) icon.className = 'fas fa-bars';
-      });
-    }
+  function closeDrawer() {
+    catNav.classList.remove('open');
+    navOverlay.classList.remove('show');
+    document.body.style.overflow = '';
+    var icon = mobileToggle.querySelector('i');
+    if (icon) icon.className = 'fas fa-bars';
+  }
 
-    document.addEventListener('click', function (e) {
-      if (!catNav.contains(e.target) && !mobileToggle.contains(e.target)) {
-        catNav.classList.remove('open');
-        if (navOverlay) navOverlay.classList.remove('show');
-        var icon = mobileToggle.querySelector('i');
-        if (icon) icon.className = 'fas fa-bars';
-      }
+  /* ── Hamburger ── */
+  if (mobileToggle) {
+    mobileToggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      catNav.classList.contains('open') ? closeDrawer() : openDrawer();
     });
   }
 
-  /* ============================
-     MOBILE MEGA MENU ACCORDION
-  ============================ */
+  /* ── Drawer close button ── */
+  if (catNavClose) {
+    catNavClose.addEventListener('click', function (e) {
+      e.stopPropagation();
+      closeDrawer();
+    });
+  }
+
+  /* ── Overlay click ── */
+  if (navOverlay) {
+    navOverlay.addEventListener('click', closeDrawer);
+  }
+
+  /* ── Stop all clicks inside drawer bubbling to document ── */
+  if (catNav) {
+    catNav.addEventListener('click', function (e) {
+      e.stopPropagation();
+    });
+  }
+
+  /* ── Document click: close if truly outside ── */
+  document.addEventListener('click', function (e) {
+    if (!catNav || !catNav.classList.contains('open')) return;
+    closeDrawer();
+  });
+
+  /* ── Accordion: top-level category items ── */
   document.querySelectorAll('.cat-nav-item > a').forEach(function (link) {
     link.addEventListener('click', function (e) {
-      var mega = this.parentElement.querySelector('.cat-nav-dropdown');
-      if (!mega) return;
+      if (window.innerWidth >= 1024) return; // desktop: CSS hover handles it
 
-      var icon = this.querySelector('.fa-chevron-down, .fa-chevron-up');
-      if (icon) {
-        e.preventDefault();
-        this.parentElement.classList.toggle('open');
-        icon.className = this.parentElement.classList.contains('open')
-          ? 'fas fa-chevron-up'
-          : 'fas fa-chevron-down';
+      var dropdown = this.parentElement.querySelector('.cat-nav-dropdown');
+      if (!dropdown) return; // no submenu — let the link navigate normally
+
+      e.preventDefault();
+      e.stopPropagation();
+
+      var parentItem = this.parentElement;
+      var isOpen = parentItem.classList.contains('open');
+
+      // Close all other open top-level items
+      document.querySelectorAll('.cat-nav-item.open').forEach(function (item) {
+        if (item !== parentItem) item.classList.remove('open');
+      });
+
+      // Toggle this one
+      if (isOpen) {
+        parentItem.classList.remove('open');
+      } else {
+        parentItem.classList.add('open');
       }
     });
   });
 
-  /* ============================
-     TABS SYSTEM
-  ============================ */
-  function initTabs(btnSelector, contentSelector, activeClass) {
-    var btns = document.querySelectorAll(btnSelector);
-    var contents = document.querySelectorAll(contentSelector);
-
+  /* ── Tabs ── */
+  function initTabs(btnSel, contentSel, active) {
+    var btns     = document.querySelectorAll(btnSel);
+    var contents = document.querySelectorAll(contentSel);
     btns.forEach(function (btn) {
       btn.addEventListener('click', function () {
         var target = this.getAttribute('data-tab');
-        btns.forEach(function (b) { b.classList.remove(activeClass); });
-        this.classList.add(activeClass);
+        btns.forEach(function (b) { b.classList.remove(active); });
+        this.classList.add(active);
         contents.forEach(function (c) {
-          c.classList.toggle(activeClass, c.id === target);
+          c.classList.toggle(active, c.id === target);
         });
       });
     });
   }
 
-  initTabs('.tab-btn',          '.tab-content',          'active');
-  initTabs('.brand-tab',        '.brand-content',        'active');
-  initTabs('.appliance-tab',    '.appliance-content',    'active');
-  initTabs('.new-arrival-tab',  '.new-arrival-content',  'active');
-
+  initTabs('.tab-btn',         '.tab-content',         'active');
+  initTabs('.brand-tab',       '.brand-content',       'active');
+  initTabs('.appliance-tab',   '.appliance-content',   'active');
+  initTabs('.new-arrival-tab', '.new-arrival-content', 'active');
 });
