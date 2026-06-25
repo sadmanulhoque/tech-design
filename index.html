@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechGadget — Smartphones, Gadgets & Premium Accessories</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/navigation.css">
+  <link rel="stylesheet" href="css/hero-slider.css">
+  <link rel="stylesheet" href="css/features.css">
+  <link rel="stylesheet" href="css/categories.css">
+  <link rel="stylesheet" href="css/products.css">
+  <link rel="stylesheet" href="css/tabs.css">
+  <link rel="stylesheet" href="css/banner.css">
+  <link rel="stylesheet" href="css/home-appliances.css">
+  <link rel="stylesheet" href="css/brands.css">
+  <link rel="stylesheet" href="css/seo-content.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/mobile-nav.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="print:hidden sticky top-0 w-full z-20">
+
+    <!-- ROW 1: Black bar with logo, search button, nav links -->
+    <div class="header-main">
+      <div class="container">
+        <div class="header-left">
+          <button class="mobile-toggle" aria-label="Toggle menu">
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="header-logo">
+            <a href="/">
+              <img src="https://picsum.photos/seed/techlogo/160/40" alt="TechGadget" width="160" height="40">
+            </a>
+          </div>
+        </div>
+
+        <div class="header-search-desktop">
+          <i class="fas fa-search"></i>
+          <span>Search your product...</span>
+        </div>
+
+        <div class="header-right">
+          <div class="header-nav-links">
+            <a href="/blog">Blog</a>
+            <a href="/pre-order">Pre-order</a>
+            <a href="/offer" class="offer-link"><i class="fas fa-fire"></i> Offers</a>
+            <a href="/compare" class="compare-link"><i class="fas fa-exchange-alt"></i> Compare</a>
+          </div>
+
+          <div class="header-icons">
+            <a href="/compare" class="header-icon-btn header-icon-btn-mobile" aria-label="Compare">
+              <i class="fas fa-exchange-alt"></i>
+            </a>
+            <a href="/cart" class="header-icon-btn" aria-label="Cart">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="count">0</span>
+            </a>
+            <a href="/signin" class="header-icon-btn" aria-label="Sign In">
+              <i class="fas fa-user"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ROW 2: Mobile search (hidden on desktop) -->
+    <div class="header-search-mobile">
+      <div class="container">
+        <form>
+          <div class="search-input-wrap">
+            <input type="text" placeholder="Search your product..." aria-label="Search products">
+            <button type="submit" class="search-submit" aria-label="Search"><i class="fas fa-search"></i></button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- ROW 3: Category nav (desktop only) -->
+    <nav class="cat-nav">
+      <div class="container">
+        <ul class="cat-nav-list">
+
+        <li class="cat-nav-item">
+          <a href="/category/apple-products">Apple Products <i class="fas fa-chevron-down"></i></a>
+          <div class="cat-nav-dropdown cat-nav-mega">
+            <div class="cat-nav-mega-grid">
+              <div class="cat-nav-mega-col">
+                <h4>iPhone & iPad</h4>
+                <a href="/category/mobile-phone/iphone">iPhone</a>
+                <a href="/category/ipad">iPad</a>
+                <a href="/category/iphone-charger">Power Adapter</a>
+              </div>
+              <div class="cat-nav-mega-col">
+                <h4>Mac</h4>
+                <a href="/category/macbook">MacBook</a>
+                <a href="/category/mac-mini">Mac mini</a>
+                <a href="/category/imac">iMac</a>
+                <a href="/category/mac-studio">Mac Studio</a>
+              </div>
+              <div class="cat-nav-mega-col">
+                <h4>Audio</h4>
+                <a href="/category/airpods">AirPods</a>
+                <a href="/category/earpods">EarPods</a>
+                <a href="/category/airpods-max">AirPods Max</a>
+              </div>
+              <div class="cat-nav-mega-col">
+                <h4>Wearables</h4>
+                <a href="/category/smart-watch/apple">Apple Watch</a>
+                <a href="/product/apple-airtag">AirTag</a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="cat-nav-item">
+          <a href="/category/mobile-phone">Phones <i class="fas fa-chevron-down"></i></a>
+          <div class="cat-nav-dropdown cat-nav-mega">
+            <div class="cat-nav-mega-grid">
+              <div class="cat-nav-mega-col">
+                <h4>Flagship</h4>
+                <a href="/category/mobile-phone/iphone">iPhone</a>
+                <a href="/category/mobile-phone/samsung">Samsung</a>
+                <a href="/category/mobile-phone/google">Google</a>
+              </div>
+              <div class="cat-nav-mega-col">
+                <h4>Popular</h4>
+                <a href="/category/mobile-phone/xiaomi">Xiaomi</a>
+                <a href="/category/mobile-phone/oneplus">OnePlus</a>
+                <a href="/category/mobile-phone/nothing">Nothing</a>
+                <a href="/category/mobile-phone/honor">Honor</a>
+              </div>
+              <div class="cat-nav-mega-col">
+                <h4>More Brands</h4>
+                <a href="/category/mobile-phone/motorola">Motorola</a>
+                <a href="/category/mobile-phone/oppo">Oppo</a>
+                <a href="/category/mobile-phone/vivo">vivo</a>
+                <a href="/category/mobile-phone/realme">Realme</a>
+              </div>
+              <div class="cat-nav-mega-col">
+                <h4>Accessories</h4>
+                <a href="/category/phone-cover">Phone Cover</a>
+                <a href="/category/phone-screen-protector">Screen Protector</a>
+                <a href="/category/phone-camera-protector">Camera Protector</a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="cat-nav-item">
+          <a href="/category/tablet">Tablets <i class="fas fa-chevron-down"></i></a>
+          <div class="cat-nav-dropdown">
+            <div class="cat-nav-mega-grid">
+              <div class="cat-nav-mega-col">
+                <h4>Tablets</h4>
+                <a href="/category/ipad">iPad</a>
+                <a href="/category/tablet/xiaomi">Xiaomi Pad</a>
+                <a href="/category/tablet/samsung">Samsung Tab</a>
+                <a href="/category/tablet/amazon">Amazon Tab</a>
+                <a href="/category/tablet/honor">HONOR Tab</a>
+              </div>
+              <div class="cat-nav-mega-col">
+                <h4>Accessories</h4>
+                <a href="/category/smart-pen">Smart Pen</a>
+                <a href="/category/hubs-and-docs">Hubs & Docks</a>
+                <a href="/category/ipad-and-tab-cover">Cover & Cases</a>
+                <a href="/category/ipad-and-tab-screen-protector">Screen Protectors</a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="cat-nav-item">
+          <a href="/category/computer-and-laptops">Computers <i class="fas fa-chevron-down"></i></a>
+          <div class="cat-nav-dropdown">
+            <div class="cat-nav-mega-grid">
+              <div class="cat-nav-mega-col">
+                <h4>Devices</h4>
+                <a href="/category/laptops">Laptops</a>
+                <a href="/category/monitor">Monitor</a>
+                <a href="/category/printer">Printer & Scanner</a>
+              </div>
+              <div class="cat-nav-mega-col">
+                <h4>Accessories</h4>
+                <a href="/category/hubs-and-docs">Hubs & Docks</a>
+                <a href="/category/keyboards">Keyboard</a>
+                <a href="/category/mouse">Mouse</a>
+                <a href="/category/mouse-pad">Mouse Pad</a>
+                <a href="/category/storage">Storage</a>
+                <a href="/category/microphone">Microphone</a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="cat-nav-item">
+          <a href="/category/gadgets-and-accessories">Gadgets <i class="fas fa-chevron-down"></i></a>
+          <div class="cat-nav-dropdown cat-nav-mega">
+            <div class="cat-nav-mega-grid">
+              <div class="cat-nav-mega-col">
+                <h4>Power</h4>
+                <a href="/category/adapter">Chargers</a>
+                <a href="/category/power-bank">Power Bank</a>
+                <a href="/category/wireless-charger">Wireless Charger</a>
+                <a href="/category/cable">Cables</a>
+                <a href="/category/multiplug">Multiplugs</a>
+              </div>
+              <div class="cat-nav-mega-col">
+                <h4>Audio & Gaming</h4>
+                <a href="/category/sound-equipment">Audio</a>
+                <a href="/category/gaming-accessories">Gaming</a>
+              </div>
+              <div class="cat-nav-mega-col">
+                <h4>Protection</h4>
+                <a href="/category/smart-tag">Smart Tag</a>
+                <a href="#">Cover & Protectors</a>
+              </div>
+              <div class="cat-nav-mega-col">
+                <h4>More</h4>
+                <a href="/category/car-accessories">Car Accessories</a>
+                <a href="/category/smart-gadgets">Smart Gadgets</a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="cat-nav-item">
+          <a href="/category/home-appliances">Home <i class="fas fa-chevron-down"></i></a>
+          <div class="cat-nav-dropdown cat-nav-mega">
+            <div class="cat-nav-mega-grid">
+              <div class="cat-nav-mega-col">
+                <h4>Kitchen</h4>
+                <a href="/category/kitchen-appliances">Kitchen Appliances</a>
+                <a href="/category/refrigerator">Refrigerator</a>
+              </div>
+              <div class="cat-nav-mega-col">
+                <h4>Climate</h4>
+                <a href="/category/air-conditioner">Air Conditioner</a>
+                <a href="/category/charger-fan">Charger Fan</a>
+                <a href="/category/room-heater">Room Heater</a>
+              </div>
+              <div class="cat-nav-mega-col">
+                <h4>Electronics</h4>
+                <a href="/category/tv">TV</a>
+                <a href="/category/washing-machine">Washing Machine</a>
+              </div>
+              <div class="cat-nav-mega-col">
+                <h4>More</h4>
+                <a href="/category/portable-power-station">Power Station</a>
+                <a href="/category/solar-panel">Solar Panel</a>
+                <a href="/category/vacuum-cleaner">Vacuum Cleaner</a>
+                <a href="/category/lighting">Lighting</a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="cat-nav-item">
+          <a href="/category/lifestyle-and-travel">Lifestyle <i class="fas fa-chevron-down"></i></a>
+          <div class="cat-nav-dropdown">
+            <div class="cat-nav-mega-grid">
+              <div class="cat-nav-mega-col">
+                <h4>Wearables</h4>
+                <a href="/category/smart-watch">Smart Watch</a>
+                <a href="/category/wrist-watch">Watch</a>
+                <a href="/category/smart-band">Smart Band</a>
+                <a href="/category/watch-accessories">Watch Accessories</a>
+              </div>
+              <div class="cat-nav-mega-col">
+                <h4>Grooming</h4>
+                <a href="/category/trimmer">Trimmer</a>
+                <a href="/category/hair-dryer">Hair Dryer</a>
+                <a href="/category/straightener">Straightener</a>
+              </div>
+              <div class="cat-nav-mega-col">
+                <h4>Bags</h4>
+                <a href="/category/bag">Bag</a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="cat-nav-item cat-nav-item-right">
+          <a href="/offer">Offers</a>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+</header>
+
+  <!-- Mobile nav overlay -->
+  <div class="nav-overlay"></div>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="hero-section container">
+    <div class="hero-slider" aria-label="Hero Slider" aria-roledescription="carousel">
+      <div class="slider-container">
+        <div class="slider-track">
+          <div class="slider-slide">
+            <a href="/offer/zero-percent-emi">
+              <figure>
+                <img src="https://picsum.photos/seed/slide1/1000/550" alt="Zero Percent EMI Offer">
+              </figure>
+            </a>
+          </div>
+          <div class="slider-slide">
+            <a href="/offer/buy-and-win">
+              <figure>
+                <img src="https://picsum.photos/seed/slide2/1000/550" alt="Buy and Win">
+              </figure>
+            </a>
+          </div>
+          <div class="slider-slide">
+            <a href="/category/mobile-phone/samsung">
+              <figure>
+                <img src="https://picsum.photos/seed/slide3/1000/550" alt="Samsung">
+              </figure>
+            </a>
+          </div>
+          <div class="slider-slide">
+            <a href="/category/air-conditioner">
+              <figure>
+                <img src="https://picsum.photos/seed/slide4/1000/550" alt="Air Conditioner">
+              </figure>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="slider-controls">
+        <span class="slider-dot active" data-index="0">1</span>
+        <span class="slider-dot inactive" data-index="1">2</span>
+        <span class="slider-dot inactive" data-index="2">3</span>
+        <span class="slider-dot inactive" data-index="3">4</span>
+      </div>
+    </div>
+
+    <div class="hero-banner-side">
+      <a href="https://www.applegadgetsbd.com/category/smart-watch/apple">
+        <figure>
+          <img src="https://picsum.photos/seed/side1/500/550" alt="Apple Watch">
+        </figure>
+      </a>
+    </div>
+    <div class="hero-banner-side">
+      <a href="https://www.applegadgetsbd.com/product/agx-hf40-portable-handheld-fan">
+        <figure>
+          <img src="https://picsum.photos/seed/side2/500/550" alt="Handheld Fan">
+        </figure>
+      </a>
+    </div>
+  </section>
+
+  <!-- ==================== FEATURES BAR ==================== -->
+  <section class="features-bar section-padding">
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature-item">
+          <div class="feature-icon"><i class="fas fa-credit-card"></i></div>
+          <div class="feature-text">
+            <h4>36 Months EMI</h4>
+            <p>Easy installment available</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon"><i class="fas fa-truck"></i></div>
+          <div class="feature-text">
+            <h4>Fastest Home Delivery</h4>
+            <p>Nationwide delivery</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon"><i class="fas fa-exchange-alt"></i></div>
+          <div class="feature-text">
+            <h4>Exchange Facility</h4>
+            <p>Old device exchange</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon"><i class="fas fa-tag"></i></div>
+          <div class="feature-text">
+            <h4>Best Price Deals</h4>
+            <p>Unbeatable prices</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon"><i class="fas fa-headset"></i></div>
+          <div class="feature-text">
+            <h4>After-Sales Service</h4>
+            <p>Dedicated support</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FEATURED CATEGORIES ==================== -->
+  <section class="categories-section">
+    <div class="container">
+      <h2 class="categories-title"><span class="title-dark">Featured</span> <span class="title-gradient">Categories</span></h2>
+      <div class="categories-grid">
+        <a href="/category/mobile-phone" class="category-card">
+          <div class="cat-img-wrap"><img src="https://picsum.photos/seed/cat-phone/160/160" alt="Mobile Phone"></div>
+          <span>Mobile Phone</span>
+        </a>
+        <a href="/category/home-appliances" class="category-card cat-home">
+          <div class="cat-img-wrap"><img src="https://picsum.photos/seed/cat-home/160/160" alt="Home Appliances"></div>
+          <span>Home Appliances</span>
+        </a>
+        <a href="/category/tablet" class="category-card">
+          <div class="cat-img-wrap"><img src="https://picsum.photos/seed/cat-tablet/160/160" alt="Tablet"></div>
+          <span>Tablet & Accessories</span>
+        </a>
+        <a href="/category/sound-equipment" class="category-card">
+          <div class="cat-img-wrap"><img src="https://picsum.photos/seed/cat-headphone/160/160" alt="Wired Headphone"></div>
+          <span>Wired Headphone</span>
+        </a>
+        <a href="/category/laptops" class="category-card">
+          <div class="cat-img-wrap"><img src="https://picsum.photos/seed/cat-laptop/160/160" alt="Laptop"></div>
+          <span>Laptop</span>
+        </a>
+        <a href="/category/airpods" class="category-card">
+          <div class="cat-img-wrap"><img src="https://picsum.photos/seed/cat-airpods/160/160" alt="AirPods"></div>
+          <span>Airpods</span>
+        </a>
+        <a href="/category/sound-equipment" class="category-card cat-wireless">
+          <div class="cat-img-wrap"><img src="https://picsum.photos/seed/cat-wireless/160/160" alt="Wireless Headphone"></div>
+          <span>Wireless Headphone</span>
+        </a>
+        <a href="/category/headphone" class="category-card">
+          <div class="cat-img-wrap"><img src="https://picsum.photos/seed/cat-hp/160/160" alt="Headphone"></div>
+          <span>Headphone</span>
+        </a>
+        <a href="/category/smart-watch" class="category-card">
+          <div class="cat-img-wrap"><img src="https://picsum.photos/seed/cat-watch/160/160" alt="Smart Watch"></div>
+          <span>Smart Watch</span>
+        </a>
+        <a href="/category/speakers" class="category-card">
+          <div class="cat-img-wrap"><img src="https://picsum.photos/seed/cat-speaker/160/160" alt="Speakers"></div>
+          <span>Speakers</span>
+        </a>
+        <a href="/category/starlink" class="category-card">
+          <div class="cat-img-wrap"><img src="https://picsum.photos/seed/cat-starlink/160/160" alt="Starlink"></div>
+          <span>Starlink</span>
+        </a>
+        <a href="/category/adapter" class="category-card">
+          <div class="cat-img-wrap"><img src="https://picsum.photos/seed/cat-adapter/160/160" alt="Adapter"></div>
+          <span>Adapter</span>
+        </a>
+        <a href="/category/cable" class="category-card">
+          <div class="cat-img-wrap"><img src="https://picsum.photos/seed/cat-cable/160/160" alt="Cables"></div>
+          <span>Cables</span>
+        </a>
+        <a href="/category/hubs-and-docs" class="category-card">
+          <div class="cat-img-wrap"><img src="https://picsum.photos/seed/cat-hub/160/160" alt="Hubs"></div>
+          <span>Hubs & Docks</span>
+        </a>
+        <a href="/category/wireless-charger" class="category-card">
+          <div class="cat-img-wrap"><img src="https://picsum.photos/seed/cat-wcharger/160/160" alt="Wireless Charger"></div>
+          <span>Wireless Charger</span>
+        </a>
+        <a href="/category/smart-pen" class="category-card">
+          <div class="cat-img-wrap"><img src="https://picsum.photos/seed/cat-pen/160/160" alt="Smart Pen"></div>
+          <span>Smart Pen</span>
+        </a>
+      </div>
+      <div class="categories-footer">
+        <a href="/categories" class="btn btn-outline">See All Categories <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== NEW TRENDS ==================== -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="product-section-header">
+        <h2 class="section-title">New Trends</h2>
+        <a href="/new-trends" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="product-scroll">
+
+        <div class="product-card">
+          <div class="product-card-image">
+            <span class="product-card-badge">-5%</span>
+            <img src="https://picsum.photos/seed/nt1/400/300" alt="Galaxy S26 Ultra 5G">
+          </div>
+          <div class="product-card-body">
+            <a href="/product/galaxy-s26-ultra" class="product-card-title">Galaxy S26 Ultra 5G</a>
+            <div class="product-card-pricing">
+              <span class="product-card-price">৳113,999</span>
+              <span class="product-card-original-price">৳119,500</span>
+              <span class="product-card-discount">-5%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card-image">
+            <img src="https://picsum.photos/seed/nt2/400/300" alt="Nothing Phone (4a) Pro">
+          </div>
+          <div class="product-card-body">
+            <a href="/product/nothing-phone-4a-pro" class="product-card-title">Nothing Phone (4a) Pro</a>
+            <div class="product-card-pricing">
+              <span class="product-card-price">৳55,499</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card-image">
+            <img src="https://picsum.photos/seed/nt3/400/300" alt="Galaxy A57 5G">
+          </div>
+          <div class="product-card-body">
+            <a href="/product/galaxy-a57-5g" class="product-card-title">Galaxy A57 5G</a>
+            <div class="product-card-pricing">
+              <span class="product-card-price">৳43,999</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card-image">
+            <span class="product-card-badge">-8%</span>
+            <img src="https://picsum.photos/seed/nt4/400/300" alt="Xiaomi Pad 7">
+          </div>
+          <div class="product-card-body">
+            <a href="/product/xiaomi-pad-7" class="product-card-title">Xiaomi Pad 7</a>
+            <div class="product-card-pricing">
+              <span class="product-card-price">৳38,499</span>
+              <span class="product-card-original-price">৳42,000</span>
+              <span class="product-card-discount">-8%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card-image">
+            <span class="product-card-badge">-1%</span>
+            <img src="https://picsum.photos/seed/nt5/400/300" alt="iPhone 17">
+          </div>
+          <div class="product-card-body">
+            <a href="/product/iphone-17" class="product-card-title">iPhone 17</a>
+            <div class="product-card-pricing">
+              <span class="product-card-price">৳100,999</span>
+              <span class="product-card-original-price">৳102,000</span>
+              <span class="product-card-discount">-1%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card-image">
+            <img src="https://picsum.photos/seed/nt6/400/300" alt="Galaxy TAB A11+">
+          </div>
+          <div class="product-card-body">
+            <a href="/product/galaxy-tab-a11-plus" class="product-card-title">Galaxy TAB A11+</a>
+            <div class="product-card-pricing">
+              <span class="product-card-price">৳26,499</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card-image">
+            <span class="product-card-badge">-17%</span>
+            <img src="https://picsum.photos/seed/nt7/400/300" alt="iPad Air M4">
+          </div>
+          <div class="product-card-body">
+            <a href="/product/ipad-air-m4" class="product-card-title">iPad Air M4 - 2026</a>
+            <div class="product-card-pricing">
+              <span class="product-card-price">৳73,499</span>
+              <span class="product-card-original-price">৳88,500</span>
+              <span class="product-card-discount">-17%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card-image">
+            <img src="https://picsum.photos/seed/nt8/400/300" alt="MacBook Air M5">
+          </div>
+          <div class="product-card-body">
+            <a href="/product/macbook-air-m5" class="product-card-title">MacBook Air M5 13-Inch</a>
+            <div class="product-card-pricing">
+              <span class="product-card-price">৳129,999</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FEATURED PRODUCTS ==================== -->
+  <section class="section-padding" style="background:var(--color-white);">
+    <div class="container">
+      <div class="product-section-header">
+        <h2 class="section-title">Featured Products</h2>
+      </div>
+
+      <div class="tab-nav">
+        <button class="tab-btn active" data-tab="best-deals">Best Deals</button>
+        <button class="tab-btn" data-tab="top-selling">Top Selling</button>
+      </div>
+
+      <div class="tab-content active" id="best-deals">
+        <div class="product-scroll">
+
+          <div class="product-card">
+            <div class="product-card-image">
+              <span class="product-card-badge">-13%</span>
+              <img src="https://picsum.photos/seed/fp1/400/300" alt="iPhone 16 Pro Max">
+            </div>
+            <div class="product-card-body">
+              <a href="/product/iphone-16-pro-max" class="product-card-title">iPhone 16 Pro Max</a>
+              <div class="product-card-pricing">
+                <span class="product-card-price">৳143,500</span>
+                <span class="product-card-original-price">৳165,000</span>
+                <span class="product-card-discount">-13%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-card-image">
+              <span class="product-card-badge">-1%</span>
+              <img src="https://picsum.photos/seed/fp2/400/300" alt="iPhone 17">
+            </div>
+            <div class="product-card-body">
+              <a href="/product/iphone-17" class="product-card-title">iPhone 17</a>
+              <div class="product-card-pricing">
+                <span class="product-card-price">৳100,999</span>
+                <span class="product-card-original-price">৳102,000</span>
+                <span class="product-card-discount">-1%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-card-image">
+              <span class="product-card-badge">-6%</span>
+              <img src="https://picsum.photos/seed/fp3/400/300" alt="Galaxy Buds Core">
+            </div>
+            <div class="product-card-body">
+              <a href="/product/galaxy-buds-core" class="product-card-title">Galaxy Buds Core</a>
+              <div class="product-card-pricing">
+                <span class="product-card-price">৳4,500</span>
+                <span class="product-card-original-price">৳4,800</span>
+                <span class="product-card-discount">-6%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-card-image">
+              <span class="product-card-badge">-28%</span>
+              <img src="https://picsum.photos/seed/fp4/400/300" alt="PHILIPS Induction Cooker">
+            </div>
+            <div class="product-card-body">
+              <a href="/product/philips-hd4929" class="product-card-title">PHILIPS HD4929 Induction Cooker - 2100W</a>
+              <div class="product-card-pricing">
+                <span class="product-card-price">৳6,800</span>
+                <span class="product-card-original-price">৳9,450</span>
+                <span class="product-card-discount">-28%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-card-image">
+              <img src="https://picsum.photos/seed/fp5/400/300" alt="Galaxy Tab A11">
+            </div>
+            <div class="product-card-body">
+              <a href="/product/galaxy-tab-a11" class="product-card-title">Galaxy Tab A11</a>
+              <div class="product-card-pricing">
+                <span class="product-card-price">৳15,499</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-card-image">
+              <span class="product-card-badge">-21%</span>
+              <img src="https://picsum.photos/seed/fp6/400/300" alt="Gree AC">
+            </div>
+            <div class="product-card-body">
+              <a href="/product/gree-gs-18xcoa3v" class="product-card-title">Gree GS-18XCOA3V Cosmo Split Inverter AC - 1.5 Ton</a>
+              <div class="product-card-pricing">
+                <span class="product-card-price">৳64,500</span>
+                <span class="product-card-original-price">৳81,890</span>
+                <span class="product-card-discount">-21%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-card-image">
+              <span class="product-card-badge">-24%</span>
+              <img src="https://picsum.photos/seed/fp7/400/300" alt="Haier AC">
+            </div>
+            <div class="product-card-body">
+              <a href="/product/haier-hsu-12turboaqua" class="product-card-title">Haier HSU-12TurboAqua Non Inverter AC - 1.0 TON</a>
+              <div class="product-card-pricing">
+                <span class="product-card-price">৳39,000</span>
+                <span class="product-card-original-price">৳50,990</span>
+                <span class="product-card-discount">-24%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-card-image">
+              <span class="product-card-badge">-29%</span>
+              <img src="https://picsum.photos/seed/fp8/400/300" alt="CMF Watch Pro 2">
+            </div>
+            <div class="product-card-body">
+              <a href="/product/cmf-by-nothing-watch-pro-2" class="product-card-title">CMF by Nothing Watch Pro 2 BT Calling Smart Watch</a>
+              <div class="product-card-pricing">
+                <span class="product-card-price">৳5,300</span>
+                <span class="product-card-original-price">৳7,500</span>
+                <span class="product-card-discount">-29%</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="tab-content" id="top-selling">
+        <div class="product-scroll">
+
+          <div class="product-card">
+            <div class="product-card-image">
+              <span class="product-card-badge">-9%</span>
+              <img src="https://picsum.photos/seed/ts1/400/300" alt="iPad 11th Gen">
+            </div>
+            <div class="product-card-body">
+              <a href="/product/ipad-11th-gen" class="product-card-title">iPad 11th Gen - 2025</a>
+              <div class="product-card-pricing">
+                <span class="product-card-price">৳43,499</span>
+                <span class="product-card-original-price">৳48,000</span>
+                <span class="product-card-discount">-9%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-card-image">
+              <span class="product-card-badge">-2%</span>
+              <img src="https://picsum.photos/seed/ts2/400/300" alt="MacBook Air M4">
+            </div>
+            <div class="product-card-body">
+              <a href="/product/macbook-air-m4-13-inch" class="product-card-title">MacBook Air M4 13-Inch</a>
+              <div class="product-card-pricing">
+                <span class="product-card-price">৳142,500</span>
+                <span class="product-card-original-price">৳146,000</span>
+                <span class="product-card-discount">-2%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-card-image">
+              <span class="product-card-badge">-20%</span>
+              <img src="https://picsum.photos/seed/ts3/400/300" alt="QCY HT15 Buds">
+            </div>
+            <div class="product-card-body">
+              <a href="/product/qcy-ht15-buds-anc" class="product-card-title">QCY HT15 Buds ANC TWS Earbuds</a>
+              <div class="product-card-pricing">
+                <span class="product-card-price">৳1,840</span>
+                <span class="product-card-original-price">৳2,300</span>
+                <span class="product-card-discount">-20%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-card-image">
+              <span class="product-card-badge">-3%</span>
+              <img src="https://picsum.photos/seed/ts4/400/300" alt="Mac mini M4">
+            </div>
+            <div class="product-card-body">
+              <a href="/product/apple-mac-mini-m4" class="product-card-title">Apple Mac mini M4 10 Core CPU 10 Core GPU - 16/256GB</a>
+              <div class="product-card-pricing">
+                <span class="product-card-price">৳87,499</span>
+                <span class="product-card-original-price">৳89,990</span>
+                <span class="product-card-discount">-3%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-card-image">
+              <img src="https://picsum.photos/seed/ts5/400/300" alt="Galaxy Watch8">
+            </div>
+            <div class="product-card-body">
+              <a href="/product/galaxy-watch8" class="product-card-title">Galaxy Watch8</a>
+              <div class="product-card-pricing">
+                <span class="product-card-price">৳24,600</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-card-image">
+              <img src="https://picsum.photos/seed/ts6/400/300" alt="OnePlus Bullets">
+            </div>
+            <div class="product-card-body">
+              <a href="/product/oneplus-bullets-wireless-z3" class="product-card-title">OnePlus Bullets Wireless Z3</a>
+              <div class="product-card-pricing">
+                <span class="product-card-price">৳2,200</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== MID BANNER ==================== -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="mid-banner">
+        <a href="/category/tv">
+          <img src="https://picsum.photos/seed/midbanner/1320/200" alt="Great Deals on TV">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== GREAT DEALS ON AIR CONDITIONER ==================== -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="product-section-header">
+        <h2 class="section-title">Great Deals On Air Conditioner</h2>
+        <a href="/category/air-conditioner" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="product-scroll">
+
+        <div class="product-card">
+          <div class="product-card-image">
+            <span class="product-card-badge">-21%</span>
+            <img src="https://picsum.photos/seed/ac01/400/300" alt="Gree AC 1.5 Ton">
+          </div>
+          <div class="product-card-body">
+            <a href="/product/gree-gs-18xcoa3v" class="product-card-title">Gree GS-18XCOA3V Cosmo Split Inverter AC - 1.5 Ton</a>
+            <div class="product-card-pricing">
+              <span class="product-card-price">৳64,500</span>
+              <span class="product-card-original-price">৳81,890</span>
+              <span class="product-card-discount">-21%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card-image">
+            <span class="product-card-badge">-21%</span>
+            <img src="https://picsum.photos/seed/ac02/400/300" alt="Gree Shimo AC">
+          </div>
+          <div class="product-card-body">
+            <a href="/product/gree-gs-18xsma4v" class="product-card-title">Gree GS-18XSMA4V Shimo Split Inverter AC - 1.5 Ton</a>
+            <div class="product-card-pricing">
+              <span class="product-card-price">৳64,500</span>
+              <span class="product-card-original-price">৳81,390</span>
+              <span class="product-card-discount">-21%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card-image">
+            <span class="product-card-badge">-22%</span>
+            <img src="https://picsum.photos/seed/ac03/400/300" alt="Haier AC">
+          </div>
+          <div class="product-card-body">
+            <a href="/product/haier-hsu-12cleancool" class="product-card-title">Haier HSU-12 Clean Cool Inverter Pro AC - 1.0 TON</a>
+            <div class="product-card-pricing">
+              <span class="product-card-price">৳45,000</span>
+              <span class="product-card-original-price">৳57,990</span>
+              <span class="product-card-discount">-22%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card-image">
+            <span class="product-card-badge">-24%</span>
+            <img src="https://picsum.photos/seed/ac04/400/300" alt="Midea AC">
+          </div>
+          <div class="product-card-body">
+            <a href="/product/midea-msa-18crn-ac" class="product-card-title">Midea MSA/MSG-18CRN Air Conditioner - 1.5 Ton</a>
+            <div class="product-card-pricing">
+              <span class="product-card-price">৳47,000</span>
+              <span class="product-card-original-price">৳61,990</span>
+              <span class="product-card-discount">-24%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card-image">
+            <span class="product-card-badge">-28%</span>
+            <img src="https://picsum.photos/seed/ac05/400/300" alt="Midea Inverter AC">
+          </div>
+          <div class="product-card-body">
+            <a href="/product/midea-msi-18crn-inverter-ac" class="product-card-title">Midea MSI-18CRN Inverter Air Conditioner - 1.5 TON</a>
+            <div class="product-card-pricing">
+              <span class="product-card-price">৳53,000</span>
+              <span class="product-card-original-price">৳73,900</span>
+              <span class="product-card-discount">-28%</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== RECHARGEABLE FAN ==================== -->
+  <section class="section-padding" style="background:var(--color-white);">
+    <div class="container">
+      <div class="product-section-header">
+        <h2 class="section-title">Rechargeable Fan</h2>
+        <a href="/category/charger-fan" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="product-scroll">
+
+        <div class="product-card">
+          <div class="product-card-image">
+            <span class="product-card-badge">-25%</span>
+            <img src="https://picsum.photos/seed/fan01/400/300" alt="AGX HF40 Fan">
+          </div>
+          <div class="product-card-body">
+            <a href="/product/agx-hf40" class="product-card-title">AGX HF40 Portable Handheld Fan - 4000mAh</a>
+            <div class="product-card-pricing">
+              <span class="product-card-price">৳1,499</span>
+              <span class="product-card-original-price">৳2,000</span>
+              <span class="product-card-discount">-25%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card-image">
+            <span class="product-card-badge">-20%</span>
+            <img src="https://picsum.photos/seed/fan02/400/300" alt="AGX TF36 Fan">
+          </div>
+          <div class="product-card-body">
+            <a href="/product/agx-tf36" class="product-card-title">AGX TF36 Handheld Turbo Fan 3600mAh With Brushless Motor</a>
+            <div class="product-card-pricing">
+              <span class="product-card-price">৳1,199</span>
+              <span class="product-card-original-price">৳1,500</span>
+              <span class="product-card-discount">-20%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card-image">
+            <span class="product-card-badge">-13%</span>
+            <img src="https://picsum.photos/seed/fan03/400/300" alt="Xundd Fan">
+          </div>
+          <div class="product-card-body">
+            <a href="/product/xundd-xdot-065" class="product-card-title">Xundd XDOT-065 Folding High Speed Handheld Fan</a>
+            <div class="product-card-pricing">
+              <span class="product-card-price">৳1,999</span>
+              <span class="product-card-original-price">৳2,290</span>
+              <span class="product-card-discount">-13%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card-image">
+            <img src="https://picsum.photos/seed/fan04/400/300" alt="Xiaomi Solove F5">
+          </div>
+          <div class="product-card-body">
+            <a href="/product/xiaomi-solove-f5" class="product-card-title">Xiaomi Solove F5 5W 4000mAh Rechargeable Desktop Stand Fan</a>
+            <div class="product-card-pricing">
+              <span class="product-card-price">৳2,350</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card-image">
+            <span class="product-card-badge">-29%</span>
+            <img src="https://picsum.photos/seed/fan05/400/300" alt="JISULIFE FA43">
+          </div>
+          <div class="product-card-body">
+            <a href="/product/jisulife-fa43" class="product-card-title">JISULIFE FA43 Handheld Turbo Fan 4000mAh</a>
+            <div class="product-card-pricing">
+              <span class="product-card-price">৳1,850</span>
+              <span class="product-card-original-price">৳2,600</span>
+              <span class="product-card-discount">-29%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card-image">
+            <img src="https://picsum.photos/seed/fan06/400/300" alt="JisuLife Life 7">
+          </div>
+          <div class="product-card-body">
+            <a href="/product/jisulife-life-7" class="product-card-title">JisuLife Life 7 Handheld Fan</a>
+            <div class="product-card-pricing">
+              <span class="product-card-price">৳2,350</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== HOME APPLIANCES ==================== -->
+  <section class="home-appliances section-padding">
+    <div class="container">
+      <div class="product-section-header">
+        <h2 class="section-title">Home Appliances</h2>
+        <a href="/category/home-appliances" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <div class="appliance-tabs">
+        <button class="appliance-tab active" data-tab="mixer">Mixer Grinder & Blender</button>
+        <button class="appliance-tab" data-tab="microwave">Microwave Oven</button>
+        <button class="appliance-tab" data-tab="fryer">Air Fryer</button>
+        <button class="appliance-tab" data-tab="cooker">Induction Cooker</button>
+      </div>
+
+      <div class="appliance-content active" id="mixer">
+        <div class="product-scroll">
+          <div class="product-card">
+            <div class="product-card-image">
+              <span class="product-card-badge">-41%</span>
+              <img src="https://picsum.photos/seed/mx1/400/300" alt="Philips Mixer">
+            </div>
+            <div class="product-card-body">
+              <a href="/product/philips-hl7757" class="product-card-title">Philips HL7757 3 Jars Mixer Grinder - 750W</a>
+              <div class="product-card-pricing">
+                <span class="product-card-price">৳6,200</span>
+                <span class="product-card-original-price">৳10,450</span>
+                <span class="product-card-discount">-41%</span>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-card-image">
+              <span class="product-card-badge">-41%</span>
+              <img src="https://picsum.photos/seed/mx2/400/300" alt="Panasonic Mixer">
+            </div>
+            <div class="product-card-body">
+              <a href="/product/panasonic-mx-ge3750" class="product-card-title">Panasonic MX-GE3750 3 Jars Mixer Grinder - 1200W</a>
+              <div class="product-card-pricing">
+                <span class="product-card-price">৳7,700</span>
+                <span class="product-card-original-price">৳13,000</span>
+                <span class="product-card-discount">-41%</span>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-card-image">
+              <span class="product-card-badge">-7%</span>
+              <img src="https://picsum.photos/seed/mx3/400/300" alt="Miyako Juicer">
+            </div>
+            <div class="product-card-body">
+              <a href="/product/miyako-sd-60sa" class="product-card-title">Miyako SD-60SA Slow Juicer - 300W</a>
+              <div class="product-card-pricing">
+                <span class="product-card-price">৳7,800</span>
+                <span class="product-card-original-price">৳8,400</span>
+                <span class="product-card-discount">-7%</span>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-card-image">
+              <span class="product-card-badge">-16%</span>
+              <img src="https://picsum.photos/seed/mx4/400/300" alt="Gazi Mixer">
+            </div>
+            <div class="product-card-body">
+              <a href="/product/gazi-breeza-smiss-mixer" class="product-card-title">Gazi Breeza Smiss Mixer Grinder - 1200W</a>
+              <div class="product-card-pricing">
+                <span class="product-card-price">৳5,750</span>
+                <span class="product-card-original-price">৳6,840</span>
+                <span class="product-card-discount">-16%</span>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-card-image">
+              <span class="product-card-badge">-14%</span>
+              <img src="https://picsum.photos/seed/mx5/400/300" alt="Xiaomi Juicer">
+            </div>
+            <div class="product-card-body">
+              <a href="/product/xiaomi-mijia-juicer" class="product-card-title">Xiaomi Mijia Portable Juicer Cup 300ml</a>
+              <div class="product-card-pricing">
+                <span class="product-card-price">৳3,000</span>
+                <span class="product-card-original-price">৳3,500</span>
+                <span class="product-card-discount">-14%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="appliance-content" id="microwave">
+        <div class="product-scroll">
+          <div class="product-card">
+            <div class="product-card-image">
+              <img src="https://picsum.photos/seed/mw1/400/300" alt="Microwave">
+            </div>
+            <div class="product-card-body">
+              <a href="/product/microwave-1" class="product-card-title">Panasonic NN-CT64J 32L Microwave Oven</a>
+              <div class="product-card-pricing">
+                <span class="product-card-price">৳18,500</span>
+                <span class="product-card-original-price">৳24,000</span>
+                <span class="product-card-discount">-23%</span>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-card-image">
+              <img src="https://picsum.photos/seed/mw2/400/300" alt="Microwave 2">
+            </div>
+            <div class="product-card-body">
+              <a href="/product/microwave-2" class="product-card-title">Samsung 28L Convection Microwave Oven</a>
+              <div class="product-card-pricing">
+                <span class="product-card-price">৳14,800</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="appliance-content" id="fryer">
+        <div class="product-scroll">
+          <div class="product-card">
+            <div class="product-card-image">
+              <img src="https://picsum.photos/seed/af1/400/300" alt="Air Fryer">
+            </div>
+            <div class="product-card-body">
+              <a href="/product/air-fryer-1" class="product-card-title">Xiaomi Mijia Air Fryer 4.5L</a>
+              <div class="product-card-pricing">
+                <span class="product-card-price">৳6,500</span>
+                <span class="product-card-original-price">৳8,500</span>
+                <span class="product-card-discount">-24%</span>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-card-image">
+              <img src="https://picsum.photos/seed/af2/400/300" alt="Air Fryer 2">
+            </div>
+            <div class="product-card-body">
+              <a href="/product/air-fryer-2" class="product-card-title">Philips Air Fryer 2.5L</a>
+              <div class="product-card-pricing">
+                <span class="product-card-price">৳8,900</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="appliance-content" id="cooker">
+        <div class="product-scroll">
+          <div class="product-card">
+            <div class="product-card-image">
+              <span class="product-card-badge">-28%</span>
+              <img src="https://picsum.photos/seed/ic1/400/300" alt="Induction Cooker">
+            </div>
+            <div class="product-card-body">
+              <a href="/product/induction-cooker-1" class="product-card-title">PHILIPS HD4929 Induction Cooker - 2100W</a>
+              <div class="product-card-pricing">
+                <span class="product-card-price">৳6,800</span>
+                <span class="product-card-original-price">৳9,450</span>
+                <span class="product-card-discount">-28%</span>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-card-image">
+              <img src="https://picsum.photos/seed/ic2/400/300" alt="Induction Cooker 2">
+            </div>
+            <div class="product-card-body">
+              <a href="/product/induction-cooker-2" class="product-card-title">Xiaomi Induction Cooker 2000W</a>
+              <div class="product-card-pricing">
+                <span class="product-card-price">৳4,500</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TOP BRAND PRODUCTS ==================== -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="product-section-header">
+        <h2 class="section-title">Top Brand Products</h2>
+      </div>
+
+      <div class="brand-tabs">
+        <button class="brand-tab active" data-tab="brand-all">All</button>
+        <button class="brand-tab" data-tab="brand-apple">Apple</button>
+        <button class="brand-tab" data-tab="brand-samsung">Samsung</button>
+        <button class="brand-tab" data-tab="brand-xiaomi">Xiaomi</button>
+        <button class="brand-tab" data-tab="brand-jbl">JBL</button>
+        <button class="brand-tab" data-tab="brand-anker">Anker</button>
+        <button class="brand-tab" data-tab="brand-nothing">Nothing</button>
+        <button class="brand-tab" data-tab="brand-sony">Sony</button>
+        <button class="brand-tab" data-tab="brand-oneplus">OnePlus</button>
+      </div>
+
+      <div class="brand-content active" id="brand-all">
+        <div class="product-scroll">
+          <div class="product-card">
+            <div class="product-card-image">
+              <span class="product-card-badge">-15%</span>
+              <img src="https://picsum.photos/seed/br1/400/300" alt="AirPods 4">
+            </div>
+            <div class="product-card-body">
+              <a href="/product/apple-airpods-4" class="product-card-title">Apple AirPods 4</a>
+              <div class="product-card-pricing">
+                <span class="product-card-price">৳14,500</span>
+                <span class="product-card-original-price">৳17,000</span>
+                <span class="product-card-discount">-15%</span>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-card-image">
+              <span class="product-card-badge">-7%</span>
+              <img src="https://picsum.photos/seed/br2/400/300" alt="QCY HT08">
+            </div>
+            <div class="product-card-body">
+              <a href="/product/qcy-melobuds-pro-anc" class="product-card-title">QCY HT08 MeloBuds Pro ANC TWS Earbuds</a>
+              <div class="product-card-pricing">
+                <span class="product-card-price">৳3,250</span>
+                <span class="product-card-original-price">৳3,500</span>
+                <span class="product-card-discount">-7%</span>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-card-image">
+              <img src="https://picsum.photos/seed/br3/400/300" alt="OnePlus Bullets">
+            </div>
+            <div class="product-card-body">
+              <a href="/product/oneplus-bullets-wireless-z3" class="product-card-title">OnePlus Bullets Wireless Z3</a>
+              <div class="product-card-pricing">
+                <span class="product-card-price">৳2,200</span>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-card-image">
+              <span class="product-card-badge">-20%</span>
+              <img src="https://picsum.photos/seed/br4/400/300" alt="QCY HT15">
+            </div>
+            <div class="product-card-body">
+              <a href="/product/qcy-ht15-buds-anc" class="product-card-title">QCY HT15 Buds ANC TWS Earbuds</a>
+              <div class="product-card-pricing">
+                <span class="product-card-price">৳1,840</span>
+                <span class="product-card-original-price">৳2,300</span>
+                <span class="product-card-discount">-20%</span>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-card-image">
+              <span class="product-card-badge">-23%</span>
+              <img src="https://picsum.photos/seed/br5/400/300" alt="Anker R50i">
+            </div>
+            <div class="product-card-body">
+              <a href="/product/anker-soundcore-r50i-nc" class="product-card-title">Anker Soundcore R50i NC TWS Earbuds</a>
+              <div class="product-card-pricing">
+                <span class="product-card-price">৳2,450</span>
+                <span class="product-card-original-price">৳3,200</span>
+                <span class="product-card-discount">-23%</span>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-card-image">
+              <span class="product-card-badge">-18%</span>
+              <img src="https://picsum.photos/seed/br6/400/300" alt="Apple Watch 11">
+            </div>
+            <div class="product-card-body">
+              <a href="/product/apple-watch-series-11" class="product-card-title">Apple Watch Series 11</a>
+              <div class="product-card-pricing">
+                <span class="product-card-price">৳44,000</span>
+                <span class="product-card-original-price">৳53,500</span>
+                <span class="product-card-discount">-18%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="brand-content" id="brand-apple">
+        <div class="product-scroll">
+          <div class="product-card">
+            <div class="product-card-image">
+              <span class="product-card-badge">-15%</span>
+              <img src="https://picsum.photos/seed/ba1/400/300" alt="AirPods 4">
+            </div>
+            <div class="product-card-body">
+              <a href="/product/apple-airpods-4" class="product-card-title">Apple AirPods 4</a>
+              <div class="product-card-pricing">
+                <span class="product-card-price">৳14,500</span>
+                <span class="product-card-original-price">৳17,000</span>
+                <span class="product-card-discount">-15%</span>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-card-image">
+              <span class="product-card-badge">-18%</span>
+              <img src="https://picsum.photos/seed/ba2/400/300" alt="Apple Watch 11">
+            </div>
+            <div class="product-card-body">
+              <a href="/product/apple-watch-series-11" class="product-card-title">Apple Watch Series 11</a>
+              <div class="product-card-pricing">
+                <span class="product-card-price">৳44,000</span>
+                <span class="product-card-original-price">৳53,500</span>
+                <span class="product-card-discount">-18%</span>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-card-image">
+              <span class="product-card-badge">-7%</span>
+              <img src="https://picsum.photos/seed/ba3/400/300" alt="Apple Watch Ultra">
+            </div>
+            <div class="product-card-body">
+              <a href="/product/apple-watch-ultra-3" class="product-card-title">Apple Watch Ultra 3</a>
+              <div class="product-card-pricing">
+                <span class="product-card-price">৳97,500</span>
+                <span class="product-card-original-price">৳105,000</span>
+                <span class="product-card-discount">-7%</span>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-card-image">
+              <span class="product-card-badge">-25%</span>
+              <img src="https://picsum.photos/seed/ba4/400/300" alt="Apple Charger">
+            </div>
+            <div class="product-card-body">
+              <a href="/product/apple-20w-usb-c-adapter" class="product-card-title">Apple 20W USB-C Power Adapter</a>
+              <div class="product-card-pricing">
+                <span class="product-card-price">৳3,000</span>
+                <span class="product-card-original-price">৳4,000</span>
+                <span class="product-card-discount">-25%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SEO CONTENT ==================== -->
+  <section class="seo-content">
+    <div class="container">
+      <h2>Bangladesh's Trusted Tech E-Commerce Store for Phones, Gadgets & Accessories</h2>
+      <p>
+        In Bangladesh, TechGadget has emerged as the premier source for genuine gadgets and accessories. We provide you with reliable brands all in one place, from the newest iPhones and iPads to robust MacBooks and wearables. Essentials like docks, hubs, safety gear, and stylus pens are also available. We always strive to provide you with excellent service, prompt delivery, and authentic products, whether you shop online or in-store. Our collection fits every lifestyle, whether you're a student, tech enthusiast, or regular user.
+      </p>
+
+      <div class="seo-images">
+        <a href="/product/westinghouse-toaster"><img src="https://picsum.photos/seed/seo1/600/300" alt="Product"></a>
+        <a href="/category/induction-cooker"><img src="https://picsum.photos/seed/seo2/600/300" alt="Product"></a>
+        <a href="/product/ecoflow-power-station"><img src="https://picsum.photos/seed/seo3/600/300" alt="Product"></a>
+      </div>
+
+      <h2>Smartphones & Tablets from Apple, Samsung, Xiaomi, OnePlus & More</h2>
+      <p>Looking for a reliable smartphone or tablet? We bring you a rich lineup of the most trusted brands including Apple, Samsung, Xiaomi, OnePlus, and more. From flagship powerhouses to value-packed models, you can pick based on your needs and budget. You'll also find the latest Galaxy Tabs and iPads for work, study, or entertainment.</p>
+
+      <h2>Mobile Accessories You Can Rely On — Cables, Cases, Power Banks</h2>
+      <p>The right accessories make your tech life easier. At TechGadget, we offer a complete range of reliable accessories like fast-charging cables, durable power banks, magnetic wireless chargers, docks, and more. We also have high-quality phone covers and screen protectors to keep your device safe.</p>
+
+      <h2>Smartwatches & Fitness Bands from Reliable Brands</h2>
+      <p>Smartwatches are more than just timekeepers now; they're your health tracker, workout buddy, and personal assistant. At TechGadget, we offer a wide range of options like Apple Watch, Samsung Watch, Xiaomi bands, and other popular picks that blend design with daily usefulness.</p>
+
+      <h2>AirPods, Wireless Earbuds & Premium Audio Devices</h2>
+      <p>Music should sound rich, clear, and uninterrupted. That's what we aim for with our collection of audio gear. From original Apple AirPods to noise-cancelling earbuds, studio-quality over-ear headphones, and pocket-size Bluetooth speakers, we've got something for every listener.</p>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-left">
+
+          <div>
+            <div class="footer-logo">
+              <a href="/"><img src="https://picsum.photos/seed/techlogo/160/40" alt="TechGadget"></a>
+            </div>
+            <div class="footer-contact">
+              <div class="footer-contact-label"><i class="fas fa-phone"></i> Phone Number</div>
+              <a class="footer-contact-value" href="tel:09678148148">09678 148148</a>
+              <div class="footer-contact-label"><i class="fas fa-envelope"></i> Email Address</div>
+              <a class="footer-contact-value" href="mailto:contact@techgadget.com">contact@techgadget.com</a>
+            </div>
+            <div class="footer-app-buttons">
+              <a href="#" class="footer-app-btn"><i class="fab fa-apple"></i> App Store</a>
+              <a href="#" class="footer-app-btn"><i class="fab fa-google-play"></i> Google Play</a>
+            </div>
+          </div>
+
+          <div>
+            <h4>About Us</h4>
+            <div class="footer-links">
+              <a href="/about-us">About Us</a>
+              <a href="/corporate">Corporate</a>
+              <a href="/tracking">Order Tracking</a>
+              <a href="/blog">Blog</a>
+              <a href="/contact-us">Contact Us</a>
+              <a href="/faq">FAQs</a>
+              <a href="/career">Careers</a>
+            </div>
+
+            <h4 style="margin-top:24px;">Policy</h4>
+            <div class="footer-links">
+              <a href="/page/privacy-policy">Privacy Policy</a>
+              <a href="/page/emi-policy">EMI and Payment Policy</a>
+              <a href="/page/warranty-policy">Warranty Policy</a>
+              <a href="/page/exchange-policy">Exchange Policy</a>
+              <a href="/page/delivery-policy">Delivery Policy</a>
+              <a href="/page/refund-policy">Refund Policy</a>
+              <a href="/page/return-policy">Return Policy</a>
+            </div>
+          </div>
+
+        </div>
+
+        <div>
+          <div class="footer-social">
+            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+
+          <h4 style="margin-top:24px;">Our Locations</h4>
+          <div class="footer-locations">
+            <div class="footer-location-item">
+              <a href="#"><i class="fas fa-map-marker-alt"></i> Basement 2, Shop 26, Bashundhara City Shopping Complex</a>
+            </div>
+            <div class="footer-location-item">
+              <a href="#"><i class="fas fa-map-marker-alt"></i> Level 5, Block A, Shop 6-8, Bashundhara City</a>
+            </div>
+            <div class="footer-location-item">
+              <a href="#"><i class="fas fa-map-marker-alt"></i> Level 4, Zone A, Shop 28D, Jamuna Future Park</a>
+            </div>
+          </div>
+
+          <h4 style="margin-top:24px;">Top Categories</h4>
+          <div class="footer-links">
+            <div class="footer-category-links">
+              <a href="/category/mobile-phone">Mobile Phones</a>
+              <a href="/category/laptops">Laptops</a>
+              <a href="/category/tablet">Tablets</a>
+              <a href="/category/smart-watch">Smart Watch</a>
+              <a href="/category/airpods">AirPods</a>
+              <a href="/category/sound-equipment">Audio</a>
+              <a href="/category/home-appliances">Home Appliances</a>
+              <a href="/category/gaming-accessories">Gaming</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Thanks From TechGadget | All rights reserved</p>
+        <div class="footer-bottom-links">
+          <a href="/page/privacy-policy">Privacy</a>
+          <a href="/page/terms">Terms</a>
+          <a href="/sitemap">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== MOBILE BOTTOM NAV ==================== -->
+  <nav class="mobile-bottom-nav">
+    <div class="container">
+      <div class="mobile-nav-inner">
+        <a href="/" class="mobile-nav-item active">
+          <i class="fas fa-home"></i>
+          <span>Home</span>
+        </a>
+        <a href="/categories" class="mobile-nav-item">
+          <i class="fas fa-th-large"></i>
+          <span>Categories</span>
+        </a>
+        <a href="/cart" class="mobile-nav-item">
+          <i class="fas fa-shopping-cart"></i>
+          <span>Cart</span>
+        </a>
+        <a href="/account" class="mobile-nav-item">
+          <i class="fas fa-user"></i>
+          <span>Account</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

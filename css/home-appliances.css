@@ -1,0 +1,41 @@
+.home-appliances {
+  background: var(--color-white);
+}
+
+.appliance-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.appliance-tab {
+  padding: 6px 18px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-light);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.appliance-tab:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.appliance-tab.active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.appliance-content {
+  display: none;
+}
+
+.appliance-content.active {
+  display: block;
+}
