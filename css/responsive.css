@@ -9,27 +9,7 @@
     display: flex;
   }
 
-  .header-main .container {
-    gap: 12px;
-  }
-
-  .header-logo img {
-    width: 100px;
-  }
-
-  .header-nav-links {
-    display: none;
-  }
-
-  .header-icon-btn-desktop {
-    display: none;
-  }
-
-  /* ─────────────────────────────────────
-     THE DRAWER
-     z-index 1100 = above overlay (1050)
-     and above everything else
-  ───────────────────────────────────── */
+  /* DRAWER MAIN STYLES */
   .cat-nav {
     display: flex !important;
     flex-direction: column;
@@ -37,320 +17,155 @@
     top: 0;
     left: -320px;
     width: 300px;
-    height: 100%;
+    height: 100vh;
     background: #ffffff;
     z-index: 1100;
-    transition: left 0.28s ease;
-    border-bottom: none;
-    overflow: hidden;
+    transition: left 0.3s ease;
     box-shadow: none;
+    overflow: hidden;
   }
 
   .cat-nav.open {
     left: 0;
-    box-shadow: 6px 0 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 4px 0 25px rgba(0, 0, 0, 0.25);
   }
 
-  /* ─────────────────────────────────────
-     OVERLAY
-     Sits between page and drawer.
-     Must NOT overlap the drawer itself.
-  ───────────────────────────────────── */
-  .nav-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1050;  /* above page, below drawer */
+  /* Mobile Header */
+  .cat-nav-mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #111827;
+    color: #fff;
+    padding: 0 20px;
+    height: 56px;
+    font-size: 17px;
+    font-weight: 600;
+    flex-shrink: 0;
   }
 
-  .nav-overlay.show {
-    display: block;
+  .cat-nav-close {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
   }
 
-  /* ─────────────────────────────────────
-     SCROLLABLE LIST AREA
-  ───────────────────────────────────── */
+  /* Scrollable Content */
   .cat-nav .container {
     flex: 1;
     overflow-y: auto;
-    overflow-x: hidden;
     padding: 0;
     background: #ffffff;
-    -webkit-overflow-scrolling: touch;
   }
 
-  /* ─────────────────────────────────────
-     LIST
-  ───────────────────────────────────── */
   .cat-nav-list {
     display: flex;
     flex-direction: column;
     width: 100%;
-    background: #ffffff;
+    padding: 0;
+    margin: 0;
+    list-style: none;
   }
 
-  /* ─────────────────────────────────────
-     TOP-LEVEL ITEMS
-  ───────────────────────────────────── */
+  /* Top Level Items */
   .cat-nav-item {
-    position: static;
-    border-bottom: 1px solid #eeeeee;
+    border-bottom: 1px solid #e5e7eb;
   }
 
   .cat-nav-item > a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 50px;
-    padding: 0 20px;
-    font-size: 14px;
+    padding: 16px 20px;
+    font-size: 15.5px;
     font-weight: 500;
-    color: #1a1a1a;
-    background: #ffffff;
-    white-space: normal;
-    border-bottom: none;
+    color: #1f2937;
+    background: #fff;
+    text-decoration: none;
   }
 
-  .cat-nav-item > a:hover {
-    background: #f9f9f9;
+  /* FORCE DISABLE HOVER ON MOBILE */
+  .cat-nav-item:hover > a,
+  .cat-nav-item:hover .cat-nav-dropdown,
+  .level-1-item:hover > a,
+  .level-1-item:hover .level-2 {
+    background: #f8fafc !important;
   }
 
-  /* Chevron icon */
-  .cat-nav-item > a i.fa-chevron-down {
-    font-size: 12px;
-    color: #aaa;
-    transition: transform 0.2s ease;
-    flex-shrink: 0;
-  }
-
-  /* Rotate when open */
-  .cat-nav-item.open > a i.fa-chevron-down {
-    transform: rotate(180deg);
-  }
-
-  /* ─────────────────────────────────────
-     DROPDOWN PANEL
-     Reset ALL desktop styles with !important
-     then control via JS .open class
-  ───────────────────────────────────── */
+  /* Dropdown - Click Only */
   .cat-nav-dropdown {
-    /* kill every desktop property */
     position: static !important;
-    top: auto !important;
-    left: auto !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: none !important;
-    box-shadow: none !important;
-    border-radius: 0 !important;
-    z-index: auto !important;
-    /* appearance */
-    background: #f4f5f7 !important;
-    border-top: 1px solid #e8e8e8;
-    min-width: 0 !important;
-    padding: 0 !important;
-    /* hidden until .open — use max-height for smooth animation */
+    background: #f8fafc;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+    border-top: 1px solid #e5e7eb;
+  }
+
+  .cat-nav-item.open > .cat-nav-dropdown {
+    max-height: 1200px;
+  }
+
+  /* Apple Multi-level */
+  .apple-multi-level {
+    background: #f8fafc;
+  }
+
+  .dropdown-inner {
+    padding: 8px 0;
+  }
+
+  .level-1 {
+    width: 100%;
+    padding: 0;
+  }
+
+  .level-1-item > a {
+    padding: 14px 24px;
+    font-size: 15px;
+    color: #1f2937;
+    justify-content: space-between;
+  }
+
+  .level-1-item > a i {
+    transition: transform 0.3s ease;
+  }
+
+  .level-1-item.open > a i.fa-chevron-right {
+    transform: rotate(90deg);
+  }
+
+  .level-2 {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
+    padding: 0 0 0 40px;
+    background: #f1f5f9;
   }
 
-  /* JS adds .open to parent .cat-nav-item */
-  .cat-nav-item.open > .cat-nav-dropdown {
-    max-height: 600px; /* large enough for any content */
-  }
-
-  /* CRITICAL: disable the CSS :hover trigger on mobile */
-  .cat-nav-item:hover > .cat-nav-dropdown {
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: none !important;
-    /* still hidden unless .open */
-    max-height: 0;
-    overflow: hidden;
-  }
-
-  .cat-nav-item.open:hover > .cat-nav-dropdown {
+  .level-1-item.open .level-2 {
     max-height: 600px;
   }
 
-  /* ─────────────────────────────────────
-     MEGA GRID inside dropdown
-  ───────────────────────────────────── */
-  .cat-nav-mega-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    padding: 8px 16px 16px;
-  }
-
-  /* Section headings */
-  .cat-nav-mega-col h4 {
-    font-size: 10px;
-    font-weight: 700;
-    color: var(--color-primary);
-    text-transform: uppercase;
-    letter-spacing: 0.7px;
-    margin: 10px 0 4px;
-    padding-bottom: 4px;
-    border-bottom: 1px solid #ffe8cc;
-  }
-
-  /* Sub-links */
-  .cat-nav-dropdown a,
-  .cat-nav-mega-col a {
+  .level-2 li a {
     display: block;
-    padding: 6px 4px 6px 6px;
-    font-size: 13px;
-    color: #555;
-    font-weight: 400;
-    background: transparent;
-    border-bottom: none;
-    transition: color 0.15s, padding-left 0.15s;
-  }
-
-  .cat-nav-dropdown a:hover,
-  .cat-nav-mega-col a:hover {
-    color: var(--color-primary);
-    padding-left: 10px;
-    background: transparent;
-  }
-
-  /* Hide desktop-only "Offers" link */
-  .cat-nav-item-right {
-    display: none;
+    padding: 12px 24px;
+    color: #374151;
+    font-size: 14.5px;
   }
 }
 
-/* Desktop: always hide overlay */
+/* Desktop Only */
 @media (min-width: 1024px) {
+  .cat-nav-mobile-header,
   .nav-overlay {
     display: none !important;
-  }
-}
-
-/* ===== GENERAL BREAKPOINTS ===== */
-
-@media (max-width: 1200px) {
-  .cat-nav-mega-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .features-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 767px) {
-  .container {
-    padding: 0 12px;
-  }
-
-  .section-padding {
-    padding: 24px 0;
-  }
-
-  .section-title {
-    font-size: 18px;
-    margin-bottom: 16px;
-  }
-
-  .product-card {
-    flex: 0 0 150px;
-  }
-
-  .product-grid {
-    gap: 8px;
-  }
-
-  .product-grid .product-card {
-    flex: none;
-  }
-
-  .product-card-title {
-    font-size: 12px;
-    max-height: 34px;
-  }
-
-  .product-card-price {
-    font-size: 14px;
-  }
-
-  .tab-btn {
-    padding: 8px 16px;
-    font-size: 13px;
-  }
-
-  .brand-tab {
-    padding: 5px 14px;
-    font-size: 13px;
-  }
-
-  .appliance-tab {
-    padding: 5px 14px;
-    font-size: 12px;
-  }
-
-  .footer-main {
-    gap: 32px;
-  }
-
-  .footer-app-buttons {
-    flex-direction: column;
-  }
-
-  .seo-images {
-    gap: 12px;
-  }
-
-  .seo-images img {
-    height: 160px;
-  }
-
-  .slider-controls {
-    bottom: 10px;
-  }
-
-  .slider-dot {
-    width: 28px;
-    height: 28px;
-    font-size: 11px;
-  }
-}
-
-@media (max-width: 480px) {
-  .product-card {
-    flex: 0 0 140px;
-  }
-
-  .product-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .features-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-  }
-
-  .feature-item {
-    padding: 10px;
-  }
-
-  .feature-text h4 {
-    font-size: 12px;
-  }
-
-  .feature-text p {
-    font-size: 11px;
-  }
-
-  .feature-icon {
-    width: 32px;
-    height: 32px;
-  }
-
-  .feature-icon i {
-    font-size: 14px;
   }
 }

@@ -1,16 +1,15 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-  var mobileToggle = document.querySelector('.mobile-toggle');
-  var catNav       = document.querySelector('.cat-nav');
-  var navOverlay   = document.querySelector('.nav-overlay');
-  var catNavClose  = document.querySelector('.cat-nav-close');
+  const mobileToggle = document.querySelector('.mobile-toggle');
+  const catNav       = document.querySelector('.cat-nav');
+  const navOverlay   = document.querySelector('.nav-overlay');
+  const catNavClose  = document.querySelector('.cat-nav-close');
 
-  /* ── Open / Close helpers ── */
   function openDrawer() {
     catNav.classList.add('open');
     navOverlay.classList.add('show');
     document.body.style.overflow = 'hidden';
-    var icon = mobileToggle.querySelector('i');
+    const icon = mobileToggle.querySelector('i');
     if (icon) icon.className = 'fas fa-times';
   }
 
@@ -18,11 +17,11 @@ document.addEventListener('DOMContentLoaded', function () {
     catNav.classList.remove('open');
     navOverlay.classList.remove('show');
     document.body.style.overflow = '';
-    var icon = mobileToggle.querySelector('i');
+    const icon = mobileToggle.querySelector('i');
     if (icon) icon.className = 'fas fa-bars';
   }
 
-  /* ── Hamburger ── */
+  // Hamburger toggle
   if (mobileToggle) {
     mobileToggle.addEventListener('click', function (e) {
       e.stopPropagation();
@@ -30,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  /* ── Drawer close button ── */
+  // Close button
   if (catNavClose) {
     catNavClose.addEventListener('click', function (e) {
       e.stopPropagation();
@@ -38,70 +37,76 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  /* ── Overlay click ── */
+  // Click on overlay to close
   if (navOverlay) {
     navOverlay.addEventListener('click', closeDrawer);
   }
 
-  /* ── Stop all clicks inside drawer bubbling to document ── */
+  // Prevent clicks inside drawer from closing it
   if (catNav) {
     catNav.addEventListener('click', function (e) {
       e.stopPropagation();
     });
   }
 
-  /* ── Document click: close if truly outside ── */
-  document.addEventListener('click', function (e) {
-    if (!catNav || !catNav.classList.contains('open')) return;
-    closeDrawer();
-  });
+  /* ==================== MOBILE ACCORDION (Multi-level) ==================== */
+  const navLinks = document.querySelectorAll('.cat-nav-item > a');
 
-  /* ── Accordion: top-level category items ── */
-  document.querySelectorAll('.cat-nav-item > a').forEach(function (link) {
+  navLinks.forEach(link => {
     link.addEventListener('click', function (e) {
-      if (window.innerWidth >= 1024) return; // desktop: CSS hover handles it
+      if (window.innerWidth >= 1024) return; // Desktop uses hover
 
-      var dropdown = this.parentElement.querySelector('.cat-nav-dropdown');
-      if (!dropdown) return; // no submenu — let the link navigate normally
+      const parentItem = this.parentElement;
+      const dropdown = parentItem.querySelector('.cat-nav-dropdown');
+
+      // If no dropdown, just navigate
+      if (!dropdown) {
+        closeDrawer(); // close menu if it's a direct link
+        return;
+      }
 
       e.preventDefault();
       e.stopPropagation();
 
-      var parentItem = this.parentElement;
-      var isOpen = parentItem.classList.contains('open');
+      const isOpen = parentItem.classList.contains('open');
 
-      // Close all other open top-level items
-      document.querySelectorAll('.cat-nav-item.open').forEach(function (item) {
+      // Close all other top-level items
+      document.querySelectorAll('.cat-nav-item.open').forEach(item => {
         if (item !== parentItem) item.classList.remove('open');
       });
 
-      // Toggle this one
-      if (isOpen) {
-        parentItem.classList.remove('open');
-      } else {
-        parentItem.classList.add('open');
-      }
+      parentItem.classList.toggle('open', !isOpen);
     });
   });
 
-  /* ── Tabs ── */
-  function initTabs(btnSel, contentSel, active) {
-    var btns     = document.querySelectorAll(btnSel);
-    var contents = document.querySelectorAll(contentSel);
-    btns.forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var target = this.getAttribute('data-tab');
-        btns.forEach(function (b) { b.classList.remove(active); });
-        this.classList.add(active);
-        contents.forEach(function (c) {
-          c.classList.toggle(active, c.id === target);
-        });
-      });
-    });
-  }
+  // Handle Level-1 clicks (Subcategories like MacBook)
+  document.querySelectorAll('.level-1-item > a').forEach(link => {
+    link.addEventListener('click', function (e) {
+      if (window.innerWidth >= 1024) return;
 
-  initTabs('.tab-btn',         '.tab-content',         'active');
-  initTabs('.brand-tab',       '.brand-content',       'active');
-  initTabs('.appliance-tab',   '.appliance-content',   'active');
-  initTabs('.new-arrival-tab', '.new-arrival-content', 'active');
+      const parent = this.parentElement;
+      const level2 = parent.querySelector('.level-2');
+
+      if (!level2) return; // no children
+
+      e.preventDefault();
+      e.stopPropagation();
+
+      const isOpen = parent.classList.contains('open');
+
+      // Close other level-1 items
+      parent.parentElement.querySelectorAll('.level-1-item.open').forEach(item => {
+        if (item !== parent) item.classList.remove('open');
+      });
+
+      parent.classList.toggle('open', !isOpen);
+    });
+  });
+
+  // Final links (child items) - close menu after click
+  document.querySelectorAll('.level-2 a, .cat-nav-dropdown a:not(.level-1-item > a)').forEach(link => {
+    link.addEventListener('click', function () {
+      setTimeout(closeDrawer, 200);
+    });
+  });
 });

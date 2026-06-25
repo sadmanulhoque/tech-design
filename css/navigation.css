@@ -4,11 +4,6 @@
    Mobile: overridden entirely in responsive.css
 ============================================= */
 
-/* Hidden by default; shown on desktop *//* =============================================
-   NAVIGATION — navigation.css
-   Desktop: horizontal bar with hover mega menus
-   Mobile: overridden entirely in responsive.css
-============================================= */
 
 /* Hidden by default; shown on desktop */
 .cat-nav {
@@ -261,4 +256,24 @@
 .level-1-item.active > a {
   background: var(--color-primary-light);
   color: var(--color-primary);
+}
+
+
+/* ====================== MOBILE OVERRIDE ====================== */
+@media (max-width: 1023px) {
+  .cat-nav-dropdown,
+  .apple-multi-level,
+  .level-2 {
+    position: static !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+  }
+
+  .cat-nav-item:hover .cat-nav-dropdown,
+  .cat-nav-item:hover > .apple-multi-level,
+  .level-1-item:hover .level-2 {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
 }
