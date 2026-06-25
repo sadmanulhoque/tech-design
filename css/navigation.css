@@ -4,6 +4,12 @@
    Mobile: overridden entirely in responsive.css
 ============================================= */
 
+/* Hidden by default; shown on desktop *//* =============================================
+   NAVIGATION — navigation.css
+   Desktop: horizontal bar with hover mega menus
+   Mobile: overridden entirely in responsive.css
+============================================= */
+
 /* Hidden by default; shown on desktop */
 .cat-nav {
   display: none;
@@ -152,4 +158,107 @@
 .cat-nav-mega-col a:hover {
   color: var(--color-primary);
   padding-left: 4px;
+}
+
+/* ====================== APPLE-STYLE MULTI-LEVEL DROPDOWN ====================== */
+
+.apple-multi-level {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 280px;
+  background: var(--color-white);
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 12px 20px -4px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+  padding: 8px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.25s ease;
+  z-index: 1000;
+  border-top: 1px solid var(--color-border);
+}
+
+.cat-nav-item:hover > .apple-multi-level {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Inner container */
+.dropdown-inner {
+  display: flex;
+  position: relative;
+}
+
+/* Level 1 - Main list */
+.level-1 {
+  list-style: none;
+  padding: 8px 0;
+  min-width: 260px;
+}
+
+.level-1-item {
+  position: relative;
+}
+
+.level-1-item > a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  color: var(--color-text);
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.level-1-item:hover > a {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+/* Level 2 - Flyout panel */
+.level-2 {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  min-width: 240px;
+  background: var(--color-white);
+  border-radius: 0 12px 12px 0;
+  box-shadow: 0 12px 20px -4px rgba(0,0,0,0.1);
+  padding: 12px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(10px);
+  transition: all 0.2s ease;
+  border-left: 1px solid var(--color-border);
+}
+
+.level-1-item:hover .level-2 {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.level-2 ul {
+  list-style: none;
+}
+
+.level-2 li a {
+  display: block;
+  padding: 10px 20px;
+  color: var(--color-text);
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.level-2 li a:hover {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+/* Active state */
+.level-1-item.active > a {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
 }

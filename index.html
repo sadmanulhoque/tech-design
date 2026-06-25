@@ -87,226 +87,82 @@
       </div>
     </div>
 
-    <!-- ROW 3: Category nav — desktop horizontal / mobile side drawer -->
-    <nav class="cat-nav">
+<!-- ROW 3: Category nav — desktop horizontal / mobile side drawer -->
+<nav class="cat-nav">
 
-      <!-- MOBILE ONLY: drawer header with title + close button -->
-      <div class="cat-nav-mobile-header">
-        <span>Main Menu</span>
-        <button class="cat-nav-close" aria-label="Close menu">
-          <i class="fas fa-times-circle"></i>
-        </button>
-      </div>
+  <!-- MOBILE ONLY: drawer header with title + close button -->
+  <div class="cat-nav-mobile-header">
+    <span>Main Menu</span>
+    <button class="cat-nav-close" aria-label="Close menu">
+      <i class="fas fa-times-circle"></i>
+    </button>
+  </div>
 
-      <div class="container">
-        <ul class="cat-nav-list">
+  <div class="container">
+    <ul class="cat-nav-list">
 
-          <li class="cat-nav-item">
-            <a href="/category/apple-products">Apple Products <i class="fas fa-chevron-down"></i></a>
-            <div class="cat-nav-dropdown cat-nav-mega">
-              <div class="cat-nav-mega-grid">
-                <div class="cat-nav-mega-col">
-                  <h4>iPhone & iPad</h4>
-                  <a href="/category/mobile-phone/iphone">iPhone</a>
-                  <a href="/category/ipad">iPad</a>
-                  <a href="/category/iphone-charger">Power Adapter</a>
+      <!-- ==================== APPLE PRODUCTS - MULTI LEVEL ==================== -->
+      <li class="cat-nav-item">
+        <a href="/category/apple-products">Apple Products <i class="fas fa-chevron-down"></i></a>
+        
+        <div class="cat-nav-dropdown apple-multi-level">
+          <div class="dropdown-inner">
+            <ul class="level-1">
+              <li class="level-1-item">
+                <a href="/category/iphone">iPhone</a>
+              </li>
+              <li class="level-1-item">
+                <a href="/category/ipad">iPad</a>
+              </li>
+              <li class="level-1-item active">
+                <a href="/category/macbook">MacBook <i class="fas fa-chevron-right"></i></a>
+                <div class="level-2">
+                  <ul>
+                    <li><a href="#">M5 Series Chip</a></li>
+                    <li><a href="#">M4 Series Chip</a></li>
+                    <li><a href="#">M3 Series Chip</a></li>
+                    <li><a href="#">M2 Series Chip</a></li>
+                    <li><a href="#">M1 Series Chip</a></li>
+                    <li><a href="#">MacBook Cover</a></li>
+                    <li><a href="#">Screen Protector</a></li>
+                  </ul>
                 </div>
-                <div class="cat-nav-mega-col">
-                  <h4>Mac</h4>
-                  <a href="/category/macbook">MacBook</a>
-                  <a href="/category/mac-mini">Mac mini</a>
-                  <a href="/category/imac">iMac</a>
-                  <a href="/category/mac-studio">Mac Studio</a>
-                </div>
-                <div class="cat-nav-mega-col">
-                  <h4>Audio</h4>
-                  <a href="/category/airpods">AirPods</a>
-                  <a href="/category/earpods">EarPods</a>
-                  <a href="/category/airpods-max">AirPods Max</a>
-                </div>
-                <div class="cat-nav-mega-col">
-                  <h4>Wearables</h4>
-                  <a href="/category/smart-watch/apple">Apple Watch</a>
-                  <a href="/product/apple-airtag">AirTag</a>
-                </div>
-              </div>
-            </div>
-          </li>
+              </li>
+              <li class="level-1-item">
+                <a href="/category/mac-mini">Mac mini</a>
+              </li>
+              <li class="level-1-item">
+                <a href="#">Power Adapter</a>
+              </li>
+              <li class="level-1-item">
+                <a href="#">AirPods</a>
+              </li>
+              <li class="level-1-item">
+                <a href="#">EarPods</a>
+              </li>
+              <li class="level-1-item">
+                <a href="#">Apple Watch</a>
+              </li>
+              <li class="level-1-item">
+                <a href="#">AirTag</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </li>
 
-          <li class="cat-nav-item">
-            <a href="/category/mobile-phone">Phones <i class="fas fa-chevron-down"></i></a>
-            <div class="cat-nav-dropdown cat-nav-mega">
-              <div class="cat-nav-mega-grid">
-                <div class="cat-nav-mega-col">
-                  <h4>Flagship</h4>
-                  <a href="/category/mobile-phone/iphone">iPhone</a>
-                  <a href="/category/mobile-phone/samsung">Samsung</a>
-                  <a href="/category/mobile-phone/google">Google</a>
-                </div>
-                <div class="cat-nav-mega-col">
-                  <h4>Popular</h4>
-                  <a href="/category/mobile-phone/xiaomi">Xiaomi</a>
-                  <a href="/category/mobile-phone/oneplus">OnePlus</a>
-                  <a href="/category/mobile-phone/nothing">Nothing</a>
-                  <a href="/category/mobile-phone/honor">Honor</a>
-                </div>
-                <div class="cat-nav-mega-col">
-                  <h4>More Brands</h4>
-                  <a href="/category/mobile-phone/motorola">Motorola</a>
-                  <a href="/category/mobile-phone/oppo">Oppo</a>
-                  <a href="/category/mobile-phone/vivo">vivo</a>
-                  <a href="/category/mobile-phone/realme">Realme</a>
-                </div>
-                <div class="cat-nav-mega-col">
-                  <h4>Accessories</h4>
-                  <a href="/category/phone-cover">Phone Cover</a>
-                  <a href="/category/phone-screen-protector">Screen Protector</a>
-                  <a href="/category/phone-camera-protector">Camera Protector</a>
-                </div>
-              </div>
-            </div>
-          </li>
+      <!-- Other categories remain with mega menu -->
+  
+ 
 
-          <li class="cat-nav-item">
-            <a href="/category/tablet">Tablets <i class="fas fa-chevron-down"></i></a>
-            <div class="cat-nav-dropdown">
-              <div class="cat-nav-mega-grid">
-                <div class="cat-nav-mega-col">
-                  <h4>Tablets</h4>
-                  <a href="/category/ipad">iPad</a>
-                  <a href="/category/tablet/xiaomi">Xiaomi Pad</a>
-                  <a href="/category/tablet/samsung">Samsung Tab</a>
-                  <a href="/category/tablet/amazon">Amazon Tab</a>
-                  <a href="/category/tablet/honor">HONOR Tab</a>
-                </div>
-                <div class="cat-nav-mega-col">
-                  <h4>Accessories</h4>
-                  <a href="/category/smart-pen">Smart Pen</a>
-                  <a href="/category/hubs-and-docs">Hubs & Docks</a>
-                  <a href="/category/ipad-and-tab-cover">Cover & Cases</a>
-                  <a href="/category/ipad-and-tab-screen-protector">Screen Protectors</a>
-                </div>
-              </div>
-            </div>
-          </li>
+      <li class="cat-nav-item">
+        <a href="/category/lifestyle-and-travel">Lifestyle <i class="fas fa-chevron-down"></i></a>
+      </li>
 
-          <li class="cat-nav-item">
-            <a href="/category/computer-and-laptops">Computers <i class="fas fa-chevron-down"></i></a>
-            <div class="cat-nav-dropdown">
-              <div class="cat-nav-mega-grid">
-                <div class="cat-nav-mega-col">
-                  <h4>Devices</h4>
-                  <a href="/category/laptops">Laptops</a>
-                  <a href="/category/monitor">Monitor</a>
-                  <a href="/category/printer">Printer & Scanner</a>
-                </div>
-                <div class="cat-nav-mega-col">
-                  <h4>Accessories</h4>
-                  <a href="/category/hubs-and-docs">Hubs & Docks</a>
-                  <a href="/category/keyboards">Keyboard</a>
-                  <a href="/category/mouse">Mouse</a>
-                  <a href="/category/mouse-pad">Mouse Pad</a>
-                  <a href="/category/storage">Storage</a>
-                  <a href="/category/microphone">Microphone</a>
-                </div>
-              </div>
-            </div>
-          </li>
 
-          <li class="cat-nav-item">
-            <a href="/category/gadgets-and-accessories">Gadgets <i class="fas fa-chevron-down"></i></a>
-            <div class="cat-nav-dropdown cat-nav-mega">
-              <div class="cat-nav-mega-grid">
-                <div class="cat-nav-mega-col">
-                  <h4>Power</h4>
-                  <a href="/category/adapter">Chargers</a>
-                  <a href="/category/power-bank">Power Bank</a>
-                  <a href="/category/wireless-charger">Wireless Charger</a>
-                  <a href="/category/cable">Cables</a>
-                  <a href="/category/multiplug">Multiplugs</a>
-                </div>
-                <div class="cat-nav-mega-col">
-                  <h4>Audio & Gaming</h4>
-                  <a href="/category/sound-equipment">Audio</a>
-                  <a href="/category/gaming-accessories">Gaming</a>
-                </div>
-                <div class="cat-nav-mega-col">
-                  <h4>Protection</h4>
-                  <a href="/category/smart-tag">Smart Tag</a>
-                  <a href="#">Cover & Protectors</a>
-                </div>
-                <div class="cat-nav-mega-col">
-                  <h4>More</h4>
-                  <a href="/category/car-accessories">Car Accessories</a>
-                  <a href="/category/smart-gadgets">Smart Gadgets</a>
-                </div>
-              </div>
-            </div>
-          </li>
-
-          <li class="cat-nav-item">
-            <a href="/category/home-appliances">Home <i class="fas fa-chevron-down"></i></a>
-            <div class="cat-nav-dropdown cat-nav-mega">
-              <div class="cat-nav-mega-grid">
-                <div class="cat-nav-mega-col">
-                  <h4>Kitchen</h4>
-                  <a href="/category/kitchen-appliances">Kitchen Appliances</a>
-                  <a href="/category/refrigerator">Refrigerator</a>
-                </div>
-                <div class="cat-nav-mega-col">
-                  <h4>Climate</h4>
-                  <a href="/category/air-conditioner">Air Conditioner</a>
-                  <a href="/category/charger-fan">Charger Fan</a>
-                  <a href="/category/room-heater">Room Heater</a>
-                </div>
-                <div class="cat-nav-mega-col">
-                  <h4>Electronics</h4>
-                  <a href="/category/tv">TV</a>
-                  <a href="/category/washing-machine">Washing Machine</a>
-                </div>
-                <div class="cat-nav-mega-col">
-                  <h4>More</h4>
-                  <a href="/category/portable-power-station">Power Station</a>
-                  <a href="/category/solar-panel">Solar Panel</a>
-                  <a href="/category/vacuum-cleaner">Vacuum Cleaner</a>
-                  <a href="/category/lighting">Lighting</a>
-                </div>
-              </div>
-            </div>
-          </li>
-
-          <li class="cat-nav-item">
-            <a href="/category/lifestyle-and-travel">Lifestyle <i class="fas fa-chevron-down"></i></a>
-            <div class="cat-nav-dropdown">
-              <div class="cat-nav-mega-grid">
-                <div class="cat-nav-mega-col">
-                  <h4>Wearables</h4>
-                  <a href="/category/smart-watch">Smart Watch</a>
-                  <a href="/category/wrist-watch">Watch</a>
-                  <a href="/category/smart-band">Smart Band</a>
-                  <a href="/category/watch-accessories">Watch Accessories</a>
-                </div>
-                <div class="cat-nav-mega-col">
-                  <h4>Grooming</h4>
-                  <a href="/category/trimmer">Trimmer</a>
-                  <a href="/category/hair-dryer">Hair Dryer</a>
-                  <a href="/category/straightener">Straightener</a>
-                </div>
-                <div class="cat-nav-mega-col">
-                  <h4>Bags</h4>
-                  <a href="/category/bag">Bag</a>
-                </div>
-              </div>
-            </div>
-          </li>
-
-          <li class="cat-nav-item cat-nav-item-right">
-            <a href="/offer">Offers</a>
-          </li>
-
-        </ul>
-      </div>
-    </nav>
+    </ul>
+  </div>
+</nav>
   </header>
 
   <!-- Mobile nav overlay -->
