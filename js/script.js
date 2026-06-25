@@ -156,35 +156,94 @@ document.addEventListener('DOMContentLoaded', function () {
      PRODUCT HORIZONTAL SCROLL
        (keyboard / arrow nav optional)
   ============================ */
-  document.querySelectorAll('.product-scroll').forEach(function (scrollEl) {
-    var isDown = false;
-    var startX;
-    var scrollLeft;
+  document.querySelectorAll('[data-scroll-target]').forEach(function (button) {
+    button.addEventListener('click', function () {
+      var targetClass = this.getAttribute('data-scroll-target');
+      var scrollEl = targetClass ? document.querySelector('.' + targetClass) : null;
+      if (!scrollEl) return;
 
-    scrollEl.addEventListener('mousedown', function (e) {
-      isDown = true;
-      startX = e.pageX - scrollEl.offsetLeft;
-      scrollLeft = scrollEl.scrollLeft;
-      scrollEl.style.cursor = 'grabbing';
-    });
+      var direction = this.getAttribute('data-direction') === 'prev' ? -1 : 1;
+      var card = scrollEl.querySelector('.product-card');
+      var gap = parseFloat(getComputedStyle(scrollEl).gap || '0') || 0;
+      var step = card ? card.getBoundingClientRect().width + gap : 280;
 
-    scrollEl.addEventListener('mouseleave', function () {
-      isDown = false;
-      scrollEl.style.cursor = 'grab';
-    });
-
-    scrollEl.addEventListener('mouseup', function () {
-      isDown = false;
-      scrollEl.style.cursor = 'grab';
-    });
-
-    scrollEl.addEventListener('mousemove', function (e) {
-      if (!isDown) return;
-      e.preventDefault();
-      var x = e.pageX - scrollEl.offsetLeft;
-      var walk = (x - startX) * 1.5;
-      scrollEl.scrollLeft = scrollLeft - walk;
+      scrollEl.scrollBy({
+        left: direction * step,
+        behavior: 'smooth'
+      });
     });
   });
+
+  var newTrendsScroll = document.querySelector('.new-trends-scroll');
+
+  if (newTrendsScroll) {
+    var dragging = false;
+    var startX = 0;
+    var scrollLeft = 0;
+    var activePointerId = null;
+
+    function stopDragging() {
+      dragging = false;
+      activePointerId = null;
+      document.body.style.userSelect = '';
+      newTrendsScroll.style.cursor = 'grab';
+    }
+
+    function startDragging(pageX, pointerId) {
+      dragging = true;
+      activePointerId = typeof pointerId === 'number' ? pointerId : null;
+      startX = pageX - newTrendsScroll.offsetLeft;
+      scrollLeft = newTrendsScroll.scrollLeft;
+      document.body.style.userSelect = 'none';
+      newTrendsScroll.style.cursor = 'grabbing';
+    }
+
+    newTrendsScroll.addEventListener('pointerdown', function (e) {
+      if (e.pointerType === 'mouse' && e.button !== 0) return;
+      startDragging(e.pageX, e.pointerId);
+      if (newTrendsScroll.setPointerCapture) {
+        newTrendsScroll.setPointerCapture(e.pointerId);
+      }
+    });
+
+    newTrendsScroll.addEventListener('pointermove', function (e) {
+      if (!dragging || activePointerId !== e.pointerId) return;
+      e.preventDefault();
+      var x = e.pageX - newTrendsScroll.offsetLeft;
+      var walk = (x - startX) * 1.5;
+      newTrendsScroll.scrollLeft = scrollLeft - walk;
+    });
+
+    newTrendsScroll.addEventListener('pointerup', stopDragging);
+    newTrendsScroll.addEventListener('pointercancel', stopDragging);
+    newTrendsScroll.addEventListener('lostpointercapture', stopDragging);
+
+    newTrendsScroll.addEventListener('mousedown', function (e) {
+      if (typeof PointerEvent !== 'undefined') return;
+      if (e.button !== 0) return;
+      startDragging(e.pageX);
+    });
+
+    document.addEventListener('mousemove', function (e) {
+      if (!dragging) return;
+      e.preventDefault();
+      var x = e.pageX - newTrendsScroll.offsetLeft;
+      var walk = (x - startX) * 1.5;
+      newTrendsScroll.scrollLeft = scrollLeft - walk;
+    });
+
+    document.addEventListener('mouseup', function () {
+      if (!dragging) return;
+      stopDragging();
+    });
+
+    newTrendsScroll.addEventListener('wheel', function (e) {
+      var shouldScrollHorizontally = Math.abs(e.deltaX) > Math.abs(e.deltaY) || e.shiftKey;
+      if (!shouldScrollHorizontally) return;
+
+      e.preventDefault();
+      newTrendsScroll.scrollLeft += e.deltaX || e.deltaY;
+    }, { passive: false });
+  }
 
 });
