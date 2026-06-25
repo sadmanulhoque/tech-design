@@ -1,247 +1,300 @@
+/* ============================================================
+   FOOTER
+   ============================================================ */
 .footer {
-  background: var(--color-black);
+  background: #0d0d0d;
   color: var(--color-white);
-  padding: 48px 0 0;
+  padding: 56px 0 0;
   margin-top: 80px;
 }
 
+/* ── Main grid: 4 columns on desktop ── */
 .footer-main {
   display: grid;
-  gap: 24px;
-}
-
-@media (min-width: 1200px) {
-  .footer-main {
-    grid-template-columns: 1fr 520px;
-  }
-}
-
-.footer-left {
-  display: grid;
-  gap: 24px;
+  gap: 40px 32px;
+  grid-template-columns: 1fr;
 }
 
 @media (min-width: 768px) {
-  .footer-left {
+  .footer-main {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-.footer-col h4 {
-  font-size: 16px;
+@media (min-width: 1100px) {
+  .footer-main {
+    grid-template-columns: 220px 1fr 170px 170px;
+    gap: 0 48px;
+  }
+}
+
+/* ── Column heading ── */
+.footer-col-heading {
+  font-size: 11px;
   font-weight: 700;
-  color: var(--color-white);
-  margin-bottom: 16px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 20px;
 }
 
-.footer-logo {
-  margin-bottom: 24px;
+/* ============================================================
+   COL 1 — Brand / Contact / App buttons
+   ============================================================ */
+.footer-col-brand .footer-logo {
+  margin-bottom: 28px;
 }
 
-.footer-logo img {
-  height: 40px;
+.footer-col-brand .footer-logo img {
+  height: 48px;
   width: auto;
 }
 
+/* Contact items */
 .footer-contact {
-  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.footer-contact-item > i {
+  font-size: 15px;
+  color: rgba(255,255,255,0.5);
+  margin-top: 2px;
+  flex-shrink: 0;
 }
 
 .footer-contact-label {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 13px;
+  font-weight: 600;
   color: var(--color-white);
-  margin-bottom: 4px;
-}
-
-.footer-contact-label svg,
-.footer-contact-label i {
-  width: 16px;
-  height: 16px;
-  color: var(--color-text-muted);
+  margin-bottom: 2px;
 }
 
 .footer-contact-value {
-  display: block;
-  font-size: 14px;
-  color: var(--color-text-muted);
-  margin-left: 24px;
-  margin-bottom: 12px;
-  transition: var(--transition);
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  transition: color 0.2s ease;
 }
 
 .footer-contact-value:hover {
   color: var(--color-primary);
 }
 
+/* App buttons */
 .footer-app-buttons {
   display: flex;
-  gap: 12px;
-  margin-top: 24px;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .footer-app-btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 12px 24px;
-  background: var(--color-dark-2);
-  border-radius: var(--radius-md);
+  gap: 12px;
+  padding: 10px 18px;
+  background: #1a1a1a;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 10px;
   color: var(--color-white);
-  font-size: 13px;
-  transition: var(--transition);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+  transition: border-color 0.2s ease, background 0.2s ease;
+  min-width: 160px;
 }
 
 .footer-app-btn:hover {
-  background: var(--color-gray-800);
   border-color: var(--color-primary);
+  background: #222;
 }
 
-.footer-app-btn i {
-  font-size: 22px;
+.footer-app-btn > i {
+  font-size: 26px;
+  flex-shrink: 0;
 }
 
-.footer-links a {
-  display: block;
-  padding: 5px 0;
-  font-size: 14px;
-  color: var(--color-text-muted);
-  transition: var(--transition);
-}
-
-.footer-links a:hover {
-  color: var(--color-primary);
-  padding-left: 4px;
-}
-
-.footer-right {
+.footer-app-btn-text {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  line-height: 1.2;
 }
 
-.footer-social {
-  display: flex;
-  gap: 10px;
+.footer-app-btn-text small {
+  font-size: 10px;
+  color: rgba(255,255,255,0.5);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
-.footer-social a {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid var(--color-gray-400);
-  border-radius: var(--radius-full);
-  color: rgba(255, 255, 255, 0.7);
-  transition: var(--transition);
-  font-size: 16px;
+.footer-app-btn-text strong {
+  font-size: 14px;
+  font-weight: 600;
 }
 
-.footer-social a:hover {
-  border-color: transparent;
-  transform: translateY(-2px);
-}
-
-.footer-social a:hover .fa-facebook-f { color: var(--color-social-fb); }
-.footer-social a:hover .fa-instagram { color: var(--color-social-insta); }
-.footer-social a:hover .fa-linkedin-in { color: var(--color-social-linkedin); }
-.footer-social a:hover .fa-whatsapp { color: #25D366; }
-
+/* ============================================================
+   COL 2 — Locations
+   ============================================================ */
 .footer-locations {
-  margin-top: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
 .footer-location-item {
-  padding: 8px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.footer-location-item:first-child {
+  padding-top: 0;
 }
 
 .footer-location-item:last-child {
   border-bottom: none;
 }
 
-.footer-location-item a {
-  font-size: 13px;
-  color: var(--color-text-muted);
-  transition: var(--transition);
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-}
-
-.footer-location-item a:hover {
-  color: var(--color-primary);
-}
-
-.footer-location-item i {
+.footer-location-item > i {
+  font-size: 14px;
   color: var(--color-primary);
   margin-top: 3px;
   flex-shrink: 0;
 }
 
+.footer-location-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-white);
+  line-height: 1.4;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.footer-location-sub {
+  font-size: 12px;
+  color: var(--color-primary);
+  display: block;
+}
+
+/* ============================================================
+   COL 3 & 4 — Links (About Us / Policy)
+   ============================================================ */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.footer-links li a {
+  font-size: 13px;
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+  padding: 5px 0;
+  display: block;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.footer-links li a:hover {
+  color: var(--color-white);
+  padding-left: 4px;
+}
+
+/* ============================================================
+   FOOTER BOTTOM BAR
+   ============================================================ */
 .footer-bottom {
-  margin-top: 40px;
+  margin-top: 48px;
   padding: 20px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255,255,255,0.07);
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-bottom-left p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.6;
+}
+
+.footer-bottom-left a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.footer-bottom-left a:hover {
+  text-decoration: underline;
+}
+
+/* Right side: WhatsApp pill + social circles */
+.footer-bottom-right {
+  display: flex;
+  align-items: center;
   gap: 12px;
 }
 
-.footer-bottom p {
+.footer-whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: #25D366;
+  border-radius: 50px;
+  color: #fff;
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.4);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
-.footer-bottom a {
-  color: var(--color-primary);
+.footer-whatsapp-btn i {
+  font-size: 16px;
 }
 
-.footer-bottom-links {
+.footer-whatsapp-btn:hover {
+  background: #1ebe59;
+  transform: translateY(-1px);
+}
+
+/* Social icon circles */
+.footer-social {
   display: flex;
-  gap: 20px;
+  gap: 8px;
 }
 
-.footer-bottom-links a {
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.4);
-  transition: var(--transition);
-}
-
-.footer-bottom-links a:hover {
-  color: var(--color-white);
-}
-
-.footer-category-title {
+.footer-social a {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
+  color: rgba(255,255,255,0.7);
   font-size: 14px;
-  font-weight: 700;
+  text-decoration: none;
+  transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-social a:hover {
+  border-color: var(--color-white);
   color: var(--color-white);
-  margin: 16px 0 8px;
-}
-
-.footer-category-title:first-child {
-  margin-top: 0;
-}
-
-.footer-category-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px 16px;
-}
-
-.footer-category-links a {
-  font-size: 13px;
-  color: var(--color-text-muted);
-  transition: var(--transition);
-}
-
-.footer-category-links a:hover {
-  color: var(--color-primary);
+  transform: translateY(-2px);
 }
