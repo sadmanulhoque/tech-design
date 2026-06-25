@@ -178,12 +178,11 @@
   position: relative;
   overflow: hidden;
   border-radius: var(--radius-lg);
-  display: none;
+  display: block; /* visible on all screen sizes; grid places them below the slider on mobile */
 }
 
 @media (min-width: 992px) {
   .hero-banner-side {
-    display: block;
   }
 
   .hero-banner-side:nth-child(2) {
