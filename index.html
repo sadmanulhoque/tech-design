@@ -49,10 +49,11 @@
           </div>
         </div>
 
-        <div class="header-search-desktop">
+        <form class="header-search-desktop" action="/search" method="get" role="search">
           <i class="fas fa-search"></i>
-          <span>Search your product...</span>
-        </div>
+          <input type="text" name="q" placeholder="Search your product..." aria-label="Search products" autocomplete="off">
+          <button type="submit" aria-label="Search">Search</button>
+        </form>
 
         <div class="header-right">
           <div class="header-nav-links">
