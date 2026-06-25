@@ -19,18 +19,15 @@
       speed             : 500,
       cssEase           : 'ease',
       infinite          : true,
-      arrows            : false,   // custom arrows not needed; add if wanted
-      dots              : true,
-      dotsClass         : 'slider-controls',   // matches existing CSS class
-      customPaging      : function (slider, i) {
-        // Renders numbered dots:  <span class="slider-dot">1</span>
-        return '<span class="slider-dot">' + (i + 1) + '</span>';
-      },
+      arrows            : true,
+      prevArrow         : '<button class="hero-arrow hero-arrow-prev" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>',
+      nextArrow         : '<button class="hero-arrow hero-arrow-next" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>',
+      dots              : false,
       pauseOnHover      : true,
       pauseOnFocus      : false,
       swipe             : true,
       touchThreshold    : 10,
-      adaptiveHeight    : false    // height fixed by CSS aspect-ratio container
+      adaptiveHeight    : false
     });
 
   });

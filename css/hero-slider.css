@@ -108,64 +108,42 @@
 }
 
 /* ============================================================
-   DOTS NAV
-   Slick renders: <ul class="slider-controls slick-dots">
-                    <li class="slick-active"><span class="slider-dot">1</span></li>
-                  </ul>
-   We reuse the original .slider-dot styles and key off
-   .slick-active for the active state.
+   ARROW NAVIGATION BUTTONS
    ============================================================ */
-.slider-controls {
+.hero-arrow {
   position: absolute;
-  bottom: 16px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 50%;
+  transform: translateY(-50%);
   z-index: 10;
-  display: flex !important; /* override Slick's block */
-  gap: 8px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-@media (min-width: 768px) {
-  .slider-controls {
-    bottom: 80px;
-  }
-}
-
-/* Reset Slick's default <li> sizing */
-.slider-controls li {
-  width: auto;
-  height: auto;
-  margin: 0;
-}
-
-/* Slick hides the <button> it generates inside li — we use customPaging
-   so there's a <span class="slider-dot"> instead. */
-.slider-dot {
-  display: grid;
-  place-items: center;
   width: 32px;
   height: 32px;
-  border-radius: var(--radius-full);
-  font-size: 12px;
-  font-weight: 600;
-  transition: var(--transition);
-  cursor: pointer;
+  border-radius: 50%;
   background: var(--color-white);
-  color: var(--color-text-muted);
-  border: 2px solid var(--color-gray-400);
-  user-select: none;
-}
-
-/* Active dot */
-.slider-controls .slick-active .slider-dot {
+  border: none;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+  transition: background 0.2s ease, transform 0.2s ease;
   color: var(--color-text);
-  border-color: var(--color-primary);
+  font-size: 12px;
 }
 
-/* Hide Slick's own built-in arrows (we don't use them) */
+.hero-arrow:hover {
+  background: var(--color-primary);
+  color: var(--color-white);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.hero-arrow-prev {
+  left: 16px;
+}
+
+.hero-arrow-next {
+  right: 16px;
+}
+
+/* hide Slick's default arrow styles */
 .hero-slick .slick-prev,
 .hero-slick .slick-next {
   display: none !important;
