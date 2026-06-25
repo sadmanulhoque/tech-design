@@ -120,9 +120,7 @@
   }
 }
 
-/* Colored labels for specific categories (matching image reference) */
-.category-card.cat-home span   { color: #F27F20; }
-.category-card.cat-wireless span { color: #852DF0; }
+
 
 /* Footer */
 .categories-footer {
