@@ -1,3 +1,6 @@
+/* ============================================================
+   HERO SECTION LAYOUT
+   ============================================================ */
 .hero-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -13,6 +16,9 @@
   }
 }
 
+/* ============================================================
+   HERO SLIDER WRAPPER
+   ============================================================ */
 .hero-slider {
   position: relative;
   overflow: hidden;
@@ -27,10 +33,14 @@
   }
 }
 
+/* ============================================================
+   ASPECT-RATIO CONTAINER
+   (Slick initialises on .hero-slick inside this)
+   ============================================================ */
 .slider-container {
   position: relative;
   width: 100%;
-  padding-bottom: 55.25%;
+  padding-bottom: 55.25%; /* mobile 16:9-ish aspect ratio */
 }
 
 @media (min-width: 992px) {
@@ -40,23 +50,41 @@
   }
 }
 
-.slider-track {
-  display: flex;
-  height: 100%;
+/* ============================================================
+   SLICK INIT TARGET  (.hero-slick)
+   Replaces the old .slider-track
+   ============================================================ */
+.hero-slick {
   position: absolute;
   inset: 0;
-  overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
 
 @media (min-width: 992px) {
-  .slider-track {
+  .hero-slick {
     position: static;
+    height: 100%;
   }
 }
 
+/* Make Slick's generated list + track fill the container */
+.hero-slick .slick-list,
+.hero-slick .slick-track {
+  height: 100%;
+}
+
+/* Each generated slide and its inner wrapper must fill too */
+.hero-slick .slick-slide,
+.hero-slick .slick-slide > div {
+  height: 100%;
+}
+
+/* ============================================================
+   SLIDE CONTENT
+   ============================================================ */
 .slider-slide {
-  flex: 0 0 100%;
-  min-width: 0;
+  height: 100%;
 }
 
 .slider-slide a {
@@ -69,22 +97,35 @@
   position: relative;
   width: 100%;
   height: 100%;
+  margin: 0;
 }
 
 .slider-slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
+/* ============================================================
+   DOTS NAV
+   Slick renders: <ul class="slider-controls slick-dots">
+                    <li class="slick-active"><span class="slider-dot">1</span></li>
+                  </ul>
+   We reuse the original .slider-dot styles and key off
+   .slick-active for the active state.
+   ============================================================ */
 .slider-controls {
   position: absolute;
   bottom: 16px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
-  display: flex;
+  display: flex !important; /* override Slick's block */
   gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 @media (min-width: 768px) {
@@ -93,33 +134,46 @@
   }
 }
 
+/* Reset Slick's default <li> sizing */
+.slider-controls li {
+  width: auto;
+  height: auto;
+  margin: 0;
+}
+
+/* Slick hides the <button> it generates inside li — we use customPaging
+   so there's a <span class="slider-dot"> instead. */
 .slider-dot {
+  display: grid;
+  place-items: center;
   width: 32px;
   height: 32px;
   border-radius: var(--radius-full);
-  display: grid;
-  place-items: center;
   font-size: 12px;
   font-weight: 600;
   transition: var(--transition);
   cursor: pointer;
   background: var(--color-white);
-  color: var(--color-text);
-  border: 2px solid transparent;
+  color: var(--color-text-muted);
+  border: 2px solid var(--color-gray-400);
+  user-select: none;
 }
 
-.slider-dot.active {
-  background: var(--color-white);
+/* Active dot */
+.slider-controls .slick-active .slider-dot {
   color: var(--color-text);
   border-color: var(--color-primary);
 }
 
-.slider-dot.inactive {
-  border-color: var(--color-gray-400);
-  color: var(--color-text-muted);
-  cursor: default;
+/* Hide Slick's own built-in arrows (we don't use them) */
+.hero-slick .slick-prev,
+.hero-slick .slick-next {
+  display: none !important;
 }
 
+/* ============================================================
+   SIDE BANNER PANELS
+   ============================================================ */
 .hero-banner-side {
   position: relative;
   overflow: hidden;
@@ -135,14 +189,19 @@
   .hero-banner-side:nth-child(2) {
     grid-column: 8 / 11;
     grid-row: 1;
-    padding-bottom: 0;
   }
 
   .hero-banner-side:nth-child(3) {
     grid-column: 8 / 11;
     grid-row: 2;
-    padding-bottom: 0;
   }
+}
+
+.hero-banner-side figure {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
 }
 
 .hero-banner-side img {
@@ -151,12 +210,6 @@
   object-fit: cover;
   position: absolute;
   inset: 0;
-}
-
-.hero-banner-side figure {
-  position: relative;
-  width: 100%;
-  height: 100%;
 }
 
 @media (max-width: 991px) {

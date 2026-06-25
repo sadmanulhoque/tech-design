@@ -310,7 +310,8 @@
   <section class="hero-section container">
     <div class="hero-slider" aria-label="Hero Slider" aria-roledescription="carousel">
       <div class="slider-container">
-        <div class="slider-track">
+        <!-- Slick initialises on .hero-slick; dots injected automatically -->
+        <div class="hero-slick">
           <div class="slider-slide">
             <a href="/offer/zero-percent-emi">
               <figure>
@@ -339,15 +340,9 @@
               </figure>
             </a>
           </div>
-        </div>
-      </div>
-      <div class="slider-controls">
-        <span class="slider-dot active" data-index="0">1</span>
-        <span class="slider-dot inactive" data-index="1">2</span>
-        <span class="slider-dot inactive" data-index="2">3</span>
-        <span class="slider-dot inactive" data-index="3">4</span>
-      </div>
-    </div>
+        </div><!-- /.hero-slick -->
+      </div><!-- /.slider-container -->
+    </div><!-- /.hero-slider -->
 
     <div class="hero-banner-side">
       <a href="https://www.applegadgetsbd.com/category/smart-watch/apple">
@@ -741,6 +736,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
   <script src="js/script.js"></script>
+  <!-- Hero carousel — depends on jQuery + Slick above -->
+  <script src="js/hero-slider.js"></script>
   <!-- New Trends carousel — depends on jQuery + Slick above -->
   <script src="js/new-trends.js"></script>
 </body>

@@ -54,62 +54,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   /* ============================
-     HERO SLIDER
-  ============================ */
-  var track = document.querySelector('.slider-track');
-  var slides = track ? track.querySelectorAll('.slider-slide') : [];
-  var dots = document.querySelectorAll('.slider-dot');
-  var currentSlide = 0;
-  var slideInterval;
-
-  function goToSlide(index) {
-    if (!track || slides.length === 0) return;
-    currentSlide = index;
-    track.style.transform = 'translateX(-' + (index * 100) + '%)';
-    dots.forEach(function (d, i) {
-      d.className = 'slider-dot ' + (i === index ? 'active' : 'inactive');
-    });
-  }
-
-  function nextSlide() {
-    if (slides.length === 0) return;
-    goToSlide((currentSlide + 1) % slides.length);
-  }
-
-  function startSlider() {
-    if (slides.length > 1) {
-      stopSlider();
-      slideInterval = setInterval(nextSlide, 5000);
-    }
-  }
-
-  function stopSlider() {
-    if (slideInterval) {
-      clearInterval(slideInterval);
-      slideInterval = null;
-    }
-  }
-
-  if (slides.length && track) {
-    track.style.display = 'flex';
-    track.style.transition = 'transform 0.5s ease';
-
-    dots.forEach(function (dot) {
-      dot.addEventListener('click', function () {
-        var idx = parseInt(this.getAttribute('data-index'));
-        if (!isNaN(idx)) {
-          stopSlider();
-          goToSlide(idx);
-          startSlider();
-        }
-      });
-    });
-
-    goToSlide(0);
-    startSlider();
-  }
-
-  /* ============================
      TABS SYSTEM
   ============================ */
   function initTabs(btnSelector, contentSelector, activeClass) {
