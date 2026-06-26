@@ -227,78 +227,93 @@
     </div>
   </section>
 
-  <!-- ==================== FEATURED CATEGORIES ==================== -->
-  <section class="categories-section">
-    <div class="container">
-      <h2 class="categories-title"><span class="title-dark">Featured</span> <span class="title-gradient">Categories</span></h2>
-      <div class="categories-grid">
-        <a href="/category/mobile-phone" class="category-card">
-          <div class="cat-img-wrap"><img src="assets/images/cat1.jpeg" alt="Mobile Phone"></div>
-          <span>Mobile Phone</span>
-        </a>
-        <a href="/category/home-appliances" class="category-card cat-home">
-          <div class="cat-img-wrap"><img src="assets/images/cat2.png" alt="Home Appliances"></div>
-          <span>Home Appliances</span>
-        </a>
-        <a href="/category/tablet" class="category-card">
-          <div class="cat-img-wrap"><img src="assets/images/cat3.jpeg" alt="Tablet"></div>
-          <span>Tablet & Accessories</span>
-        </a>
-        <a href="/category/sound-equipment" class="category-card">
-          <div class="cat-img-wrap"><img src="assets/images/cat4.jpeg" alt="Wired Headphone"></div>
-          <span>Wired Headphone</span>
-        </a>
-        <a href="/category/laptops" class="category-card">
-          <div class="cat-img-wrap"><img src="assets/images/cat1.jpeg" alt="Laptop"></div>
-          <span>Laptop</span>
-        </a>
-        <a href="/category/airpods" class="category-card">
-          <div class="cat-img-wrap"><img src="assets/images/cat2.png" alt="AirPods"></div>
-          <span>Airpods</span>
-        </a>
-        <a href="/category/sound-equipment" class="category-card cat-wireless">
-          <div class="cat-img-wrap"><img src="assets/images/cat3.jpeg" alt="Wireless Headphone"></div>
-          <span>Wireless Headphone</span>
-        </a>
-        <a href="/category/headphone" class="category-card">
-          <div class="cat-img-wrap"><img src="assets/images/cat4.jpeg" alt="Headphone"></div>
-          <span>Headphone</span>
-        </a>
-        <a href="/category/smart-watch" class="category-card">
-          <div class="cat-img-wrap"><img src="assets/images/cat1.jpeg" alt="Smart Watch"></div>
-          <span>Smart Watch</span>
-        </a>
-        <a href="/category/speakers" class="category-card">
-          <div class="cat-img-wrap"><img src="assets/images/cat2.png" alt="Speakers"></div>
-          <span>Speakers</span>
-        </a>
-        <a href="/category/starlink" class="category-card">
-          <div class="cat-img-wrap"><img src="assets/images/cat3.jpeg" alt="Starlink"></div>
-          <span>Starlink</span>
-        </a>
-        <a href="/category/adapter" class="category-card">
-          <div class="cat-img-wrap"><img src="assets/images/cat4.jpeg" alt="Adapter"></div>
-          <span>Adapter</span>
-        </a>
-        <a href="/category/cable" class="category-card">
-          <div class="cat-img-wrap"><img src="assets/images/cat1.jpeg" alt="Cables"></div>
-          <span>Cables</span>
-        </a>
-        <a href="/category/hubs-and-docs" class="category-card">
-          <div class="cat-img-wrap"><img src="assets/images/cat2.png" alt="Hubs"></div>
-          <span>Hubs & Docks</span>
-        </a>
-        <a href="/category/wireless-charger" class="category-card">
-          <div class="cat-img-wrap"><img src="assets/images/cat3.jpeg" alt="Wireless Charger"></div>
-          <span>Wireless Charger</span>
-        </a>
-        <a href="/category/smart-pen" class="category-card">
-          <div class="cat-img-wrap"><img src="assets/images/cat4.jpeg" alt="Smart Pen"></div>
-          <span>Smart Pen</span>
-        </a>
-      </div>
+<!-- ==================== FEATURED CATEGORIES ==================== -->
+<section class="categories-section">
+  <div class="container">
+    <h2 class="categories-title">
+      <span class="title-dark">Featured</span> 
+      <span class="title-gradient">Categories</span>
+    </h2>
+    
+    <div class="categories-grid" id="categories-grid">
+      <!-- First 6 categories (always visible) -->
+      <a href="/category/mobile-phone" class="category-card initial">
+        <div class="cat-img-wrap"><img src="assets/images/cat1.jpeg" alt="Mobile Phone"></div>
+        <span>Mobile Phone</span>
+      </a>
+      <a href="/category/home-appliances" class="category-card initial">
+        <div class="cat-img-wrap"><img src="assets/images/cat2.png" alt="Home Appliances"></div>
+        <span>Home Appliances</span>
+      </a>
+      <a href="/category/tablet" class="category-card initial">
+        <div class="cat-img-wrap"><img src="assets/images/cat3.jpeg" alt="Tablet"></div>
+        <span>Tablet & Accessories</span>
+      </a>
+      <a href="/category/sound-equipment" class="category-card initial">
+        <div class="cat-img-wrap"><img src="assets/images/cat4.jpeg" alt="Wired Headphone"></div>
+        <span>Wired Headphone</span>
+      </a>
+      <a href="/category/laptops" class="category-card initial">
+        <div class="cat-img-wrap"><img src="assets/images/cat1.jpeg" alt="Laptop"></div>
+        <span>Laptop</span>
+      </a>
+      <a href="/category/airpods" class="category-card initial">
+        <div class="cat-img-wrap"><img src="assets/images/cat2.png" alt="AirPods"></div>
+        <span>Airpods</span>
+      </a>
+
+      <!-- Extra categories (hidden on mobile by default) -->
+      <a href="/category/sound-equipment" class="category-card extra">
+        <div class="cat-img-wrap"><img src="assets/images/cat3.jpeg" alt="Wireless Headphone"></div>
+        <span>Wireless Headphone</span>
+      </a>
+      <a href="/category/headphone" class="category-card extra">
+        <div class="cat-img-wrap"><img src="assets/images/cat4.jpeg" alt="Headphone"></div>
+        <span>Headphone</span>
+      </a>
+      <a href="/category/smart-watch" class="category-card extra">
+        <div class="cat-img-wrap"><img src="assets/images/cat1.jpeg" alt="Smart Watch"></div>
+        <span>Smart Watch</span>
+      </a>
+      <a href="/category/speakers" class="category-card extra">
+        <div class="cat-img-wrap"><img src="assets/images/cat2.png" alt="Speakers"></div>
+        <span>Speakers</span>
+      </a>
+      <a href="/category/starlink" class="category-card extra">
+        <div class="cat-img-wrap"><img src="assets/images/cat3.jpeg" alt="Starlink"></div>
+        <span>Starlink</span>
+      </a>
+      <a href="/category/adapter" class="category-card extra">
+        <div class="cat-img-wrap"><img src="assets/images/cat4.jpeg" alt="Adapter"></div>
+        <span>Adapter</span>
+      </a>
+      <a href="/category/cable" class="category-card extra">
+        <div class="cat-img-wrap"><img src="assets/images/cat1.jpeg" alt="Cables"></div>
+        <span>Cables</span>
+      </a>
+      <a href="/category/hubs-and-docs" class="category-card extra">
+        <div class="cat-img-wrap"><img src="assets/images/cat2.png" alt="Hubs"></div>
+        <span>Hubs & Docks</span>
+      </a>
+      <a href="/category/wireless-charger" class="category-card extra">
+        <div class="cat-img-wrap"><img src="assets/images/cat3.jpeg" alt="Wireless Charger"></div>
+        <span>Wireless Charger</span>
+      </a>
+      <a href="/category/smart-pen" class="category-card extra">
+        <div class="cat-img-wrap"><img src="assets/images/cat4.jpeg" alt="Smart Pen"></div>
+        <span>Smart Pen</span>
+      </a>
     </div>
-  </section>
+
+    <!-- Toggle Button -->
+    <div class="categories-footer" id="categories-footer">
+      <button id="toggle-categories" class="btn">
+        See All Categories
+        <i class="fas fa-chevron-down"></i>
+      </button>
+    </div>
+  </div>
+</section>
 
   <!-- ==================== NEW TRENDS ==================== -->
   <section class="section-padding new-trends-section">
@@ -586,6 +601,7 @@
 
   <script src="js/script.js"></script>
   <script src="js/hero-slider.js"></script>
+  <script src="js/featured-category.js"></script>
   <script src="js/new-trends.js"></script>
 </body>
 </html>
