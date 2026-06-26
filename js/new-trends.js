@@ -1,7 +1,6 @@
 /**
  * new-trends.js
  * Initialises the Slick carousel for the New Trends section.
- * Depends on: jQuery, slick-carousel (both loaded before this file).
  */
 (function ($) {
   'use strict';
@@ -10,16 +9,15 @@
 
     var $slider = $('.new-trends-slick');
 
-    // Guard: only run if the element exists and Slick is available
     if (!$slider.length || !$.fn.slick) return;
 
     $slider.slick({
-      slidesToShow   : 4,      // cards visible at once on desktop
-      slidesToScroll : 1,      // one card per arrow click
-      infinite       : true,
+      slidesToShow   : 4,
+      slidesToScroll : 1,
+      infinite       : false,     // ← Changed to false
       speed          : 400,
       cssEase        : 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-      arrows         : false,  // custom buttons used instead
+      arrows         : false,
       dots           : false,
       swipe          : true,
       touchThreshold : 10,
@@ -43,7 +41,7 @@
       ]
     });
 
-    // Wire up the custom prev / next buttons
+    // Custom arrows
     $('#new-trends-prev').on('click', function () {
       $slider.slick('slickPrev');
     });
