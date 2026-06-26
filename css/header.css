@@ -243,11 +243,11 @@ header.sticky {
   top: 50%;
   right: 4px;
   transform: translateY(-50%);
-  width: 32px;
+  width: 62px;
   height: 32px;
   background: var(--color-primary);
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 15px;
   cursor: pointer;
 }
