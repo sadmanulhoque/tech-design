@@ -15,12 +15,34 @@
   grid-template-columns: 1fr;
 }
 
+/* ====================== MOBILE LAYOUT ====================== */
+@media (max-width: 767px) {
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 24px;
+  }
+  
+  /* Brand and Locations take full width */
+  .footer-col-brand,
+  .footer-col-locations {
+    grid-column: 1 / -1;
+  }
+  
+  /* About Us and Policy sit side by side */
+  .footer-main > .footer-col:nth-child(3),
+  .footer-main > .footer-col:nth-child(4) {
+    grid-column: span 1;
+  }
+}
+
+/* ====================== TABLET LAYOUT ====================== */
 @media (min-width: 768px) {
   .footer-main {
     grid-template-columns: 1fr 1fr;
   }
 }
 
+/* ====================== DESKTOP LAYOUT ====================== */
 @media (min-width: 1100px) {
   .footer-main {
     grid-template-columns: 220px 1fr 170px 170px;
