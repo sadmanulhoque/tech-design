@@ -1,31 +1,23 @@
 /* ============================================================
-   HEADER — print hide
+   HEADER
    ============================================================ */
 @media print {
-  .print\:hidden {
-    display: none !important;
-  }
+  .print\:hidden { display: none !important; }
 }
 
-/* ============================================================
-   STICKY UTILITY CLASSES
-   ============================================================ */
-.sticky  { position: sticky; }
-.top-0   { top: 0; }
-.w-full  { width: 100%; }
-.z-20    { z-index: 20; }
+.sticky { position: sticky; }
+.top-0 { top: 0; }
+.w-full { width: 100%; }
+.z-20 { z-index: 20; }
 
 header.sticky {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
 }
 
-/* ============================================================
-   ROW 1 — Black bar
-   ============================================================ */
+/* ROW 1 - Black Bar */
 .header-main {
   background: var(--color-black);
   color: var(--color-white);
-  position: relative;
 }
 
 .header-main .container {
@@ -45,7 +37,7 @@ header.sticky {
   }
 }
 
-/* ── Left: hamburger + logo ── */
+/* Left: Hamburger + Logo */
 .header-left {
   display: flex;
   align-items: center;
@@ -60,7 +52,6 @@ header.sticky {
   justify-content: center;
   color: var(--color-white);
   font-size: 22px;
-  flex-shrink: 0;
   background: none;
   border: none;
   cursor: pointer;
@@ -68,11 +59,6 @@ header.sticky {
 
 @media (min-width: 1024px) {
   .mobile-toggle { display: none; }
-}
-
-.header-logo a {
-  display: flex;
-  align-items: center;
 }
 
 .header-logo img {
@@ -84,7 +70,7 @@ header.sticky {
   .header-logo img { width: 160px; }
 }
 
-/* ── Centre: Search form (desktop only) ── */
+/* ==================== DESKTOP SEARCH (RESTORED) ==================== */
 .header-search-desktop {
   display: none;
   align-items: center;
@@ -116,56 +102,38 @@ header.sticky {
   color: var(--color-white);
   font-size: 16px;
   flex-shrink: 0;
-  pointer-events: none;
 }
 
 .header-search-desktop input {
   flex: 1;
-  min-width: 0;
   background: transparent;
   border: none;
   outline: none;
   color: var(--color-white);
   font-size: 14px;
-  font-family: inherit;
 }
 
 .header-search-desktop input::placeholder {
   color: rgba(255, 255, 255, 0.4);
 }
 
-/* Search submit button */
 .header-search-desktop button[type="submit"] {
-  display: grid;
-  place-items: center;
   padding: 0 18px;
   height: 36px;
-  flex-shrink: 0;
   background: var(--color-primary);
   color: var(--color-white);
   border: none;
   border-radius: var(--radius-full);
   font-size: 13px;
   font-weight: 600;
-  font-family: inherit;
   cursor: pointer;
-  transition: var(--transition);
-  white-space: nowrap;
 }
 
-.header-search-desktop button[type="submit"]:hover {
-  background: var(--color-primary-dark, #d97706);
-}
-
-/* ── Right: nav links + icon buttons ── */
+/* Right Side */
 .header-right {
   display: flex;
   align-items: center;
   gap: 16px;
-}
-
-@media (min-width: 1024px) {
-  .header-right { gap: 20px; }
 }
 
 .header-nav-links {
@@ -178,45 +146,16 @@ header.sticky {
   .header-nav-links { display: flex; }
 }
 
-@media (min-width: 1200px) {
-  .header-nav-links { gap: 20px; }
-}
-
 .header-nav-links a {
   font-size: 14px;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.8);
-  transition: var(--transition);
-  white-space: nowrap;
   text-decoration: none;
-}
-
-@media (min-width: 1400px) {
-  .header-nav-links a { font-size: 16px; }
 }
 
 .header-nav-links a:hover { color: var(--color-primary); }
 
-.header-nav-links a.offer-link {
-  color: var(--color-primary);
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.header-nav-links a.compare-link {
-  display: none;
-}
-
-@media (min-width: 1024px) {
-  .header-nav-links a.compare-link {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-}
-
-/* Icon buttons (cart, user, compare) */
+/* Icons */
 .header-icons {
   display: flex;
   align-items: center;
@@ -232,16 +171,12 @@ header.sticky {
   border: 1px solid var(--color-gray-400);
   border-radius: var(--radius-full);
   color: var(--color-white);
-  transition: var(--transition);
-  font-size: 16px;
+  font-size: 18px;
   text-decoration: none;
 }
 
-@media (min-width: 1200px) {
-  .header-icon-btn {
-    width: 48px;
-    height: 48px;
-  }
+@media (min-width: 1024px) {
+  .header-icon-btn { width: 48px; height: 48px; }
 }
 
 .header-icon-btn:hover {
@@ -256,41 +191,28 @@ header.sticky {
   width: 18px;
   height: 18px;
   background: var(--color-primary);
-  color: var(--color-white);
+  color: white;
   font-size: 11px;
-  font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--radius-full);
+  border-radius: 50%;
 }
 
-/* Compare icon — mobile only */
-.header-icon-btn-mobile {
-  display: grid;
-  place-items: center;
-  width: 40px;
-  height: 40px;
-  border: 1px solid var(--color-gray-400);
-  border-radius: var(--radius-full);
-  color: var(--color-white);
-  font-size: 16px;
-  text-decoration: none;
+/* ==================== MOBILE CLEANUP ==================== */
+@media (max-width: 1023px) {
+  .header-compare-icon,
+  .header-account-icon {
+    display: none !important;
+  }
+  
+  .header-main .container {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 }
 
-@media (min-width: 1024px) {
-  .header-icon-btn-mobile { display: none; }
-}
-
-.header-icon-btn-desktop { display: none; }
-
-@media (min-width: 1024px) {
-  .header-icon-btn-desktop { display: grid; }
-}
-
-/* ============================================================
-   ROW 2 — Mobile search bar (hidden on desktop)
-   ============================================================ */
+/* Mobile Search */
 .header-search-mobile {
   display: block;
   padding-bottom: 8px;
@@ -301,16 +223,8 @@ header.sticky {
   .header-search-mobile { display: none; }
 }
 
-.header-search-mobile form {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  position: relative;
-}
-
 .header-search-mobile .search-input-wrap {
   position: relative;
-  flex: 1;
 }
 
 .header-search-mobile input {
@@ -322,16 +236,6 @@ header.sticky {
   background: var(--color-white);
   color: var(--color-text);
   font-size: 14px;
-  font-family: inherit;
-  outline: none;
-}
-
-.header-search-mobile input::placeholder {
-  color: var(--color-text-muted);
-}
-
-.header-search-mobile input:focus {
-  border-color: var(--color-primary);
 }
 
 .header-search-mobile .search-submit {
@@ -341,11 +245,9 @@ header.sticky {
   transform: translateY(-50%);
   width: 32px;
   height: 32px;
-  display: grid;
-  place-items: center;
   background: var(--color-primary);
-  color: var(--color-white);
-  border-radius: 6px;
+  color: white;
   border: none;
+  border-radius: 6px;
   cursor: pointer;
 }
