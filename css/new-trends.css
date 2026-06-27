@@ -139,3 +139,13 @@
 .new-trends-slick .slick-dots {
   display: none !important;
 }
+
+
+
+.slick-list {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  padding-bottom: 30px;
+}
