@@ -12,8 +12,8 @@
     if (!$slider.length || !$.fn.slick) return;
 
     $slider.slick({
-      slidesToShow   : 4,
-      slidesToScroll : 1,
+      slidesToShow   : 5,
+      slidesToScroll : 2,
       infinite       : false,
       speed          : 400,
       cssEase        : 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
