@@ -2,7 +2,6 @@
    NEW TRENDS SECTION — Slick-powered carousel
    ============================================================ */
 
-/* Section header */
 .new-trends-section .product-section-header {
   margin-bottom: 28px;
   display: flex;
@@ -29,7 +28,7 @@
 .new-trends-section .carousel-arrow {
   width: 34px;
   height: 34px;
-  border-radius: 50%;           /* Perfect circle */
+  border-radius: 50%;
   display: grid;
   place-items: center;
   transition: all 0.25s ease;
@@ -39,7 +38,7 @@
 
 .new-trends-section .carousel-arrow-prev {
   background: #ffffff;
-  border: 2px solid #d1d5db;     /* Clean visible circle border */
+  border: 2px solid #d1d5db;
   color: #6b7280;
 }
 
@@ -58,20 +57,19 @@
   font-size: 15px;
 }
 
-/* Extra polish for prev arrow */
 .new-trends-section .carousel-arrow-prev:hover {
   background: #f8fafc;
   border-color: #9ca3af;
   color: #374151;
 }
 
-/* ── Slick track spacing ── */
+/* ── Slick track spacing — reduced gap so cards aren't fat ── */
 .new-trends-slick .slick-list {
-  margin: 0 -8px;
+  margin: 0 -6px;
 }
 
 .new-trends-slick .slick-slide {
-  padding: 0 8px;
+  padding: 0 6px;
   height: auto;
 }
 

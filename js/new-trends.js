@@ -14,7 +14,7 @@
     $slider.slick({
       slidesToShow   : 4,
       slidesToScroll : 1,
-      infinite       : false,     // ← Changed to false
+      infinite       : false,
       speed          : 400,
       cssEase        : 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
       arrows         : false,
@@ -33,15 +33,13 @@
         {
           breakpoint: 576,
           settings: {
-            slidesToShow  : 1,
-            centerMode    : true,
-            centerPadding : '32px'
+            slidesToShow  : 2,
+            centerMode    : false
           }
         }
       ]
     });
 
-    // Custom arrows
     $('#new-trends-prev').on('click', function () {
       $slider.slick('slickPrev');
     });

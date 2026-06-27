@@ -1,5 +1,5 @@
 /* ============================================================
-   PRODUCT SCROLL  (used by non-Slick carousels elsewhere)
+   PRODUCT SCROLL
    ============================================================ */
 .product-scroll {
   display: flex;
@@ -11,17 +11,14 @@
   scrollbar-width: thin;
 }
 
-.product-scroll::-webkit-scrollbar {
-  height: 4px;
-}
-
+.product-scroll::-webkit-scrollbar { height: 4px; }
 .product-scroll::-webkit-scrollbar-thumb {
   background: var(--color-border);
   border-radius: 10px;
 }
 
 /* ============================================================
-   PRODUCT CARD  (shared across grid + carousels)
+   PRODUCT CARD  (shared)
    ============================================================ */
 .product-card {
   border-radius: var(--radius-3xl);
@@ -35,16 +32,12 @@
   scroll-snap-align: start;
 }
 
-/* Flex-basis only used inside a plain flex scroll row */
 .product-scroll .product-card { flex: 0 0 164px; }
-
 @media (min-width: 576px)  { .product-scroll .product-card { flex: 0 0 30%;  } }
 @media (min-width: 992px)  { .product-scroll .product-card { flex: 0 0 45%;  } }
 @media (min-width: 1200px) { .product-scroll .product-card { flex: 0 0 280px; } }
 
-.product-card:hover {
-  transform: translateY(-4px);
-}
+.product-card:hover { transform: translateY(-4px); }
 
 .product-card-image {
   position: relative;
@@ -65,9 +58,7 @@
   transition: transform 0.4s ease;
 }
 
-.product-card:hover .product-card-image img {
-  transform: scale(1.05);
-}
+.product-card:hover .product-card-image img { transform: scale(1.05); }
 
 .product-card-badge {
   position: absolute;
@@ -103,10 +94,7 @@
 }
 
 @media (min-width: 768px) {
-  .product-card-title {
-    font-size: 16px;
-    max-height: 44px;
-  }
+  .product-card-title { font-size: 16px; max-height: 44px; }
 }
 
 .product-card-title:hover { color: var(--color-primary); }
@@ -142,7 +130,7 @@
 }
 
 /* ============================================================
-   PRODUCT GRID  (category / search pages)
+   PRODUCT GRID
    ============================================================ */
 .product-grid {
   display: grid;
@@ -157,7 +145,9 @@
 .product-grid .product-card { flex: none; }
 
 
-/* Card styles */
+/* ============================================================
+   NEW TRENDS SLICK CARD
+   ============================================================ */
 .new-trends-slick .product-card {
   flex: 1 1 auto;
   width: 100%;
@@ -168,16 +158,31 @@
   overflow: hidden;
 }
 
+/* Use padding-bottom % but scoped to the slick slide width,
+   which is now correctly constrained by slidesToShow */
 .new-trends-slick .product-card-image {
-  padding-bottom: 72%;
-  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+  position: relative;
+  padding-bottom: 80%;
+  height: 0;
+  background: #f8fafc;
+  overflow: hidden;
 }
 
 .new-trends-slick .product-card-image img {
-  padding: 16px 18px 0;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
+  padding: 0;
+  transition: transform 0.4s ease;
 }
 
+.new-trends-slick .product-card:hover .product-card-image img {
+  transform: scale(1.05);
+}
+
+/* Body — unchanged from your original */
 .new-trends-slick .product-card-body {
   padding: 14px 16px 0;
 }
@@ -217,5 +222,3 @@
 .new-trends-slick .slick-dots {
   display: none !important;
 }
-
-
