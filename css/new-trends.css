@@ -1,10 +1,15 @@
 /* ============================================================
-   NEW TRENDS SECTION  —  Slick-powered carousel
+   NEW TRENDS SECTION — Slick-powered carousel
    ============================================================ */
 
 /* Section header */
 .new-trends-section .product-section-header {
   margin-bottom: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
 .new-trends-section .section-title {
@@ -14,7 +19,7 @@
   line-height: 1.05;
 }
 
-/* Custom prev / next arrow buttons */
+/* ==================== CUSTOM ARROWS ==================== */
 .new-trends-section .section-actions {
   display: flex;
   align-items: center;
@@ -22,29 +27,42 @@
 }
 
 .new-trends-section .carousel-arrow {
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius-full);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;           /* Perfect circle */
   display: grid;
   place-items: center;
-  transition: var(--transition);
-  box-shadow: var(--shadow-sm);
+  transition: all 0.25s ease;
   cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
 }
 
 .new-trends-section .carousel-arrow-prev {
-  border: 1px solid var(--color-gray-400);
-  background: var(--color-white);
-  color: var(--color-text-light);
+  background: #ffffff;
+  border: 2px solid #d1d5db;     /* Clean visible circle border */
+  color: #6b7280;
 }
 
 .new-trends-section .carousel-arrow-next {
-  background: var(--color-black);
-  color: var(--color-white);
+  background: #111827;
+  color: #ffffff;
+  border: none;
 }
 
 .new-trends-section .carousel-arrow:hover {
-  transform: translateY(-1px);
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.new-trends-section .carousel-arrow i {
+  font-size: 15px;
+}
+
+/* Extra polish for prev arrow */
+.new-trends-section .carousel-arrow-prev:hover {
+  background: #f8fafc;
+  border-color: #9ca3af;
+  color: #374151;
 }
 
 /* ── Slick track spacing ── */
@@ -57,18 +75,19 @@
   height: auto;
 }
 
-/* ensure the inner flex child fills the slide */
 .new-trends-slick .slick-slide > div {
   display: flex;
 }
 
-/* ── Card overrides inside the Slick track ── */
+/* Card styles */
 .new-trends-slick .product-card {
   flex: 1 1 auto;
   width: 100%;
   border: 1px solid var(--color-border-light);
   box-shadow: 0 12px 30px rgba(16, 24, 40, 0.08);
   padding-bottom: 16px;
+  border-radius: 16px;
+  overflow: hidden;
 }
 
 .new-trends-slick .product-card-image {
@@ -78,9 +97,7 @@
 
 .new-trends-slick .product-card-image img {
   padding: 16px 18px 0;
-  background: transparent;
   object-fit: contain;
-  border-radius: var(--radius-3xl) var(--radius-3xl) 0 0;
 }
 
 .new-trends-slick .product-card-body {
@@ -104,18 +121,19 @@
   color: var(--color-dark);
 }
 
-.new-trends-slick .product-card-original-price {
+.new-trends-slick .product-card-original-price,
+.new-trends-slick .product-card-discount {
   font-size: 14px;
 }
 
 .new-trends-slick .product-card-discount {
   padding: 4px 10px;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   background: #dcfce7;
-  color: var(--color-success);
+  color: #15803d;
 }
 
-/* hide Slick's built-in arrows & dots (custom buttons used instead) */
+/* Hide default Slick controls */
 .new-trends-slick .slick-prev,
 .new-trends-slick .slick-next,
 .new-trends-slick .slick-dots {
