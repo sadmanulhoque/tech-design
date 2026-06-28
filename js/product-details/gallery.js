@@ -21,26 +21,37 @@ $(function () {
     autoplaySpeed:  1500,
     speed:          500,
     cssEase:        'linear',
-    asNavFor:       '.gallery-thumbs-slider',
     useTransform:   false,       /* prevents reverse-slide glitch */
   });
 
-  /* ── Thumbnail slider (synced nav) ── */
+  /* ── Thumbnail slider (no asNavFor to prevent physical sliding) ── */
   $thumbs.slick({
     slidesToShow:   5,
     slidesToScroll: 1,
     arrows:         false,
     dots:           false,
-    infinite:       true,
+    infinite:       false,
     rtl:            false,
-    focusOnSelect:  true,
-    asNavFor:       '.gallery-main-slider',
+    focusOnSelect:  false,
     useTransform:   false,
     responsive: [
       { breakpoint: 768, settings: { slidesToShow: 4 } },
       { breakpoint: 480, settings: { slidesToShow: 3 } },
     ],
   });
+
+  /* Custom Sync: Main -> Thumbs (update active class) */
+  $main.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+    $thumbs.find('.slick-slide').removeClass('slick-current slick-active');
+    $thumbs.find('.slick-slide[data-slick-index="' + nextSlide + '"]').addClass('slick-current slick-active');
+  });
+
+  /* Custom Sync: Thumbs -> Main (click to change main image) */
+  $thumbs.on('click', '.slick-slide', function () {
+    var index = $(this).data('slick-index');
+    $main.slick('slickGoTo', index);
+  });
+
 
   /* Pause on thumb click, resume after 4s */
   $thumbs.on('click', '.thumb-item', function () {
