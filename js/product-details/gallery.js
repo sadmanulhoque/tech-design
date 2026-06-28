@@ -21,7 +21,6 @@ $(function () {
     autoplaySpeed:  1500,
     speed:          500,
     cssEase:        'linear',
-    useTransform:   false,       /* prevents reverse-slide glitch */
   });
 
   /* ── Thumbnail slider (no asNavFor to prevent physical sliding) ── */
@@ -34,6 +33,7 @@ $(function () {
     rtl:            false,
     focusOnSelect:  false,
     useTransform:   false,
+    variableWidth:  true,
     responsive: [
       { breakpoint: 768, settings: { slidesToShow: 4 } },
       { breakpoint: 480, settings: { slidesToShow: 3 } },

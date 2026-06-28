@@ -6,8 +6,14 @@
   display: flex;
   flex-direction: column;
   gap: 14px;
-  position: sticky;
-  top: 24px;
+  min-width: 0;
+}
+
+@media (min-width: 768px) {
+  .product-gallery {
+    position: sticky;
+    top: 24px;
+  }
 }
 
 /* ── Main slider wrapper ── */
@@ -20,7 +26,6 @@
 
 /* Each slide: image fills the container edge-to-edge */
 .gallery-main-slider .slick-slide {
-  display: block !important;
   height: 580px;
   background: var(--color-white);
   position: relative;
@@ -28,7 +33,7 @@
   cursor: zoom-in;
 }
 
-.gallery-main-slider .slick-slide > div {
+.gallery-main-slider .slick-slide div {
   height: 100%;
 }
 
@@ -81,7 +86,7 @@
 
 /* Each thumb — small square, product centered, white bg */
 .thumb-item {
-  width: 80px !important;
+  width: 80px;
   height: 80px;
   border: 2px solid var(--color-border);
   border-radius: 14px;
