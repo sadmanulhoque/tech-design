@@ -59,14 +59,14 @@
 
 /* ── CTA button row ── */
 .action-row {
-  display: grid;
-  grid-template-columns: 1fr auto;
+  display: flex;
+  flex-wrap: wrap;
   gap: 12px;
 }
 
 @media (max-width: 480px) {
   .action-row {
-    grid-template-columns: 1fr;
+    flex-direction: column;
   }
 }
 
@@ -74,8 +74,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 52px;
-  padding: 0 28px;
+  gap: 8px;
+  height: 45px;
+  padding: 0 24px;
   background: var(--color-primary);
   color: var(--color-white);
   border-radius: var(--radius-full);
@@ -83,8 +84,12 @@
   font-weight: 700;
   border: none;
   cursor: pointer;
-  width: 100%;
+  min-width: 420px;
   transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.btn-shop-now i {
+  font-size: 16px;
 }
 
 .btn-shop-now:hover {
@@ -97,7 +102,7 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  height: 52px;
+  height: 45px;
   padding: 0 22px;
   background: var(--color-white);
   color: var(--color-text);

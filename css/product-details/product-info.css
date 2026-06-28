@@ -118,3 +118,21 @@
 .delivery-row strong {
   color: var(--color-dark);
 }
+
+/* ── Description panel ── */
+.product-description {
+  margin-top: 40px;
+  padding-top: 40px;
+  border-top: 1px solid var(--color-border);
+}
+
+.product-description-content {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--color-dark, #000);
+  max-width: 760px;
+}
+
+.product-description-content p + p {
+  margin-top: 14px;
+}

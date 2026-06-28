@@ -26,7 +26,6 @@
   <link rel="stylesheet" href="css/product-details/product-info.css">
   <link rel="stylesheet" href="css/product-details/variants.css">
   <link rel="stylesheet" href="css/product-details/actions.css">
-  <link rel="stylesheet" href="css/product-details/tabs.css">
 </head>
 <body>
 
@@ -152,9 +151,11 @@
 
             <!-- CTA buttons -->
             <div class="action-row">
-              <button class="btn-shop-now">Shop Now</button>
+              <button class="btn-shop-now">
+                <i class="fas fa-shopping-cart"></i> Add to Cart
+              </button>
               <button class="btn-add-cart">
-                <i class="fas fa-shopping-cart"></i> Add To Cart
+                <i class="fas fa-exchange-alt"></i> Compare
               </button>
             </div>
 
@@ -181,55 +182,15 @@
 
 
         <!-- ============================================================
-             TABS — Specification / Description / Reviews
+             DESCRIPTION
         ============================================================ -->
-        <div class="product-tabs-section">
-          <div class="tab-list" role="tablist">
-            <button class="tab-btn active" data-tab="tab-spec" role="tab">Specification</button>
-            <button class="tab-btn" data-tab="tab-desc" role="tab">Description</button>
-            <button class="tab-btn" data-tab="tab-review" role="tab">Reviews</button>
+        <div class="product-description">
+          <div class="product-description-content">
+            <h3>Description</h3>
+            <p>The Xiaomi Pad 7 features an 11.2-inch IPS LCD display with a 144Hz refresh rate and 2880×1800 resolution, powered by the Snapdragon 7s Gen 3.</p>
+            <p>With an 8850mAh battery supporting 45W Turbo Charging and HyperOS on top of Android 14, it delivers a smooth, all-day experience for work and entertainment alike.</p>
           </div>
-
-          <div class="tab-content">
-
-            <!-- Specification -->
-            <div id="tab-spec" class="tab-panel active">
-              <table class="specs-table">
-                <tbody>
-                  <tr><td>Brand</td><td>Xiaomi</td></tr>
-                  <tr><td>Model</td><td>Pad 7</td></tr>
-                  <tr><td>Display</td><td>11.2″ LCD, 2880×1800, 144Hz</td></tr>
-                  <tr><td>Processor</td><td>Snapdragon 7s Gen 3</td></tr>
-                  <tr><td>RAM</td><td>8GB / 12GB LPDDR5</td></tr>
-                  <tr><td>Storage</td><td>128GB / 256GB UFS 2.2</td></tr>
-                  <tr><td>Battery</td><td>8850 mAh, 45W Turbo Charging</td></tr>
-                  <tr><td>Camera (Rear)</td><td>13MP AF</td></tr>
-                  <tr><td>Camera (Front)</td><td>8MP FF</td></tr>
-                  <tr><td>OS</td><td>HyperOS (Android 14)</td></tr>
-                  <tr><td>Connectivity</td><td>Wi-Fi 6E, Bluetooth 5.3, USB-C 3.2</td></tr>
-                  <tr><td>Dimensions</td><td>251.2 × 171.9 × 6.18 mm</td></tr>
-                  <tr><td>Weight</td><td>500g</td></tr>
-                  <tr><td>Colors</td><td>Black, Blue, Green</td></tr>
-                  <tr><td>In the Box</td><td>Tablet, 45W Charger, USB-C Cable, Quick Start Guide</td></tr>
-                </tbody>
-              </table>
-            </div>
-
-            <!-- Description -->
-            <div id="tab-desc" class="tab-panel">
-              <div class="tab-desc-content">
-                <p>The Xiaomi Pad 7 features an 11.2-inch IPS LCD display with a 144Hz refresh rate and 2880×1800 resolution, powered by the Snapdragon 7s Gen 3.</p>
-                <p>With an 8850mAh battery supporting 45W Turbo Charging and HyperOS on top of Android 14, it delivers a smooth, all-day experience for work and entertainment alike.</p>
-              </div>
-            </div>
-
-            <!-- Reviews -->
-            <div id="tab-review" class="tab-panel">
-              <p class="tab-reviews-empty">No reviews yet. Be the first to review this product.</p>
-            </div>
-
-          </div><!-- /.tab-content -->
-        </div><!-- /.product-tabs-section -->
+        </div>
 
       </section>
     </div><!-- /.container -->
@@ -244,6 +205,5 @@
   <script src="js/product-details/gallery.js"></script>
   <script src="js/product-details/variants.js"></script>
   <script src="js/product-details/actions.js"></script>
-  <script src="js/product-details/tabs.js"></script>
 </body>
 </html>
