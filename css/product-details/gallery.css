@@ -62,31 +62,35 @@
 
 /* Gap between thumb slides */
 .gallery-thumbs-slider .slick-slide {
-  padding: 0 5px;
+  padding: 0 4px;
 }
 
 .gallery-thumbs-slider .slick-list {
-  margin: 0 -5px;
+  margin: 0 -4px;
 }
 
-/* Each thumb — match original: large, square, object-cover */
+/* Each thumb — small square, product centered, white bg */
 .thumb-item {
-  position: relative;
-  height: 120px;          /* proportional to taller main slider */
+  width: 80px !important;
+  height: 80px;
   border: 2px solid var(--color-border);
-  border-radius: var(--radius-md);
+  border-radius: 14px;
   overflow: hidden;
   cursor: pointer;
   background: var(--color-white);
-  display: block !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
   transition: border-color 0.2s ease;
   outline: none;
+  box-sizing: border-box;
 }
 
 .thumb-item img {
   width: 100%;
   height: 100%;
-  object-fit: cover;      /* fills the box — same as original */
+  object-fit: contain;
   display: block;
 }
 
