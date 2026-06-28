@@ -23,6 +23,9 @@
   display: block !important;
   height: 580px;
   background: var(--color-white);
+  position: relative;
+  overflow: hidden;
+  cursor: zoom-in;
 }
 
 .gallery-main-slider .slick-slide > div {
@@ -34,6 +37,12 @@
   height: 100%;
   object-fit: cover;
   display: block !important;
+  transition: transform 0.2s ease-out;
+  transform-origin: center center;
+}
+
+.gallery-main-slider .slick-slide:hover img {
+  transform: scale(2);
 }
 
 @media (max-width: 1100px) {

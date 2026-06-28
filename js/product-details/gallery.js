@@ -59,4 +59,20 @@ $(function () {
     setTimeout(function () { $main.slick('slickPlay'); }, 4000);
   });
 
+  /* ── Image Zoom on Hover ── */
+  $main.on('mousemove', '.slick-slide', function (e) {
+    var $img = $(this).find('img');
+    if (!$img.length) return;
+
+    var offset = $(this).offset();
+    var width = $(this).outerWidth();
+    var height = $(this).outerHeight();
+
+    // Calculate mouse position relative to the container as a percentage
+    var x = ((e.pageX - offset.left) / width) * 100;
+    var y = ((e.pageY - offset.top) / height) * 100;
+
+    $img.css('transform-origin', x + '% ' + y + '%');
+  });
+
 });
