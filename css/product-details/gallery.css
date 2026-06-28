@@ -5,7 +5,7 @@
 .product-gallery {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
   position: sticky;
   top: 24px;
 }
@@ -13,81 +13,54 @@
 /* ── Main slider wrapper ── */
 .gallery-main-slider {
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
+  border-radius: 20px;
   overflow: hidden;
   background: var(--color-white);
 }
 
-/* Slick slide image */
+/* Each slide: image fills the container edge-to-edge */
 .gallery-main-slider .slick-slide {
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  height: 460px;
-  padding: 24px;
+  display: block !important;
+  height: 580px;
   background: var(--color-white);
 }
 
-@media (max-width: 767px) {
-  .gallery-main-slider .slick-slide {
-    height: 300px;
-    padding: 16px;
-  }
+.gallery-main-slider .slick-slide > div {
+  height: 100%;
 }
 
 .gallery-main-slider .slick-slide img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   display: block !important;
-  transition: transform 0.4s ease;
 }
 
-.gallery-main-slider .slick-slide:hover img {
-  transform: scale(1.04);
+@media (max-width: 1100px) {
+  .gallery-main-slider .slick-slide {
+    height: 500px;
+  }
 }
 
-/* Hide default slick arrows/dots */
+@media (max-width: 767px) {
+  .gallery-main-slider .slick-slide {
+    height: 380px;
+  }
+}
+
+/* Hide ALL slick controls on main slider — no arrows, no dots */
 .gallery-main-slider .slick-prev,
 .gallery-main-slider .slick-next,
 .gallery-main-slider .slick-dots {
   display: none !important;
 }
 
-/* ── Custom Arrows ── */
-.gallery-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: var(--color-white);
-  border: 1px solid var(--color-border);
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-  color: var(--color-text);
-  font-size: 13px;
-  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-}
-
-.gallery-arrow:hover {
-  background: var(--color-primary);
-  color: var(--color-white);
-  border-color: var(--color-primary);
-}
-
-.gallery-arrow-prev { left: 12px; }
-.gallery-arrow-next { right: 12px; }
-
-/* ── Thumbnail slider ── */
+/* ── Thumbnail strip ── */
 .gallery-thumbs-slider {
-  padding: 4px 0;
+  /* no extra padding */
 }
 
+/* Gap between thumb slides */
 .gallery-thumbs-slider .slick-slide {
   padding: 0 5px;
 }
@@ -96,18 +69,16 @@
   margin: 0 -5px;
 }
 
+/* Each thumb — match original: large, square, object-cover */
 .thumb-item {
-  width: 82px !important;
-  height: 82px;
+  position: relative;
+  height: 120px;          /* proportional to taller main slider */
   border: 2px solid var(--color-border);
   border-radius: var(--radius-md);
   overflow: hidden;
   cursor: pointer;
   background: var(--color-white);
-  padding: 8px;
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
+  display: block !important;
   transition: border-color 0.2s ease;
   outline: none;
 }
@@ -115,15 +86,17 @@
 .thumb-item img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;      /* fills the box — same as original */
+  display: block;
 }
 
+/* Active / hover state */
 .thumb-item.slick-current,
 .thumb-item:hover {
   border-color: var(--color-primary);
 }
 
-/* Hide thumb arrows */
+/* Hide thumb slider arrows */
 .gallery-thumbs-slider .slick-prev,
 .gallery-thumbs-slider .slick-next {
   display: none !important;

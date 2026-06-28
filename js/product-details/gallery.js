@@ -5,37 +5,40 @@
 
 $(function () {
 
-  /* ── Main image slider ── */
-  var $main = $('.gallery-main-slider');
+  var $main   = $('.gallery-main-slider');
   var $thumbs = $('.gallery-thumbs-slider');
 
+  /* ── Main image slider ── */
   $main.slick({
-    slidesToShow: 1,
+    slidesToShow:   1,
     slidesToScroll: 1,
-    arrows: true,
-    prevArrow: '<button class="gallery-arrow gallery-arrow-prev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>',
-    nextArrow: '<button class="gallery-arrow gallery-arrow-next" aria-label="Next"><i class="fas fa-chevron-right"></i></button>',
-    dots: false,
-    fade: true,
-    cssEase: 'ease',
-    asNavFor: '.gallery-thumbs-slider',
-    lazyLoad: 'ondemand',
+    arrows:         false,   /* no arrows */
+    dots:           false,
+    fade:           true,
+    cssEase:        'ease',
+    autoplay:       true,    /* auto-slide */
+    autoplaySpeed:  3000,
+    asNavFor:       '.gallery-thumbs-slider',
   });
 
   /* ── Thumbnail slider (synced nav) ── */
   $thumbs.slick({
-    slidesToShow: 4,
+    slidesToShow:   5,
     slidesToScroll: 1,
-    arrows: false,
-    dots: false,
-    focusOnSelect: true,
-    asNavFor: '.gallery-main-slider',
+    arrows:         false,
+    dots:           false,
+    focusOnSelect:  true,
+    asNavFor:       '.gallery-main-slider',
     responsive: [
-      {
-        breakpoint: 480,
-        settings: { slidesToShow: 3 }
-      }
-    ]
+      { breakpoint: 768, settings: { slidesToShow: 4 } },
+      { breakpoint: 480, settings: { slidesToShow: 3 } },
+    ],
+  });
+
+  /* Pause autoplay when user manually clicks a thumb */
+  $thumbs.on('click', '.thumb-item', function () {
+    $main.slick('slickPause');
+    setTimeout(function () { $main.slick('slickPlay'); }, 5000);
   });
 
 });
