@@ -55,9 +55,10 @@
   display: none !important;
 }
 
-/* ── Thumbnail strip ── */
-.gallery-thumbs-slider {
-  /* no extra padding */
+/* ── Thumbnail strip — left-aligned ── */
+.gallery-thumbs-slider .slick-track {
+  margin-left: 0;   /* override slick's auto-centering */
+  margin-right: auto;
 }
 
 /* Gap between thumb slides */
