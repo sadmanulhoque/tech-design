@@ -1,0 +1,125 @@
+/* ============================================================
+   PRODUCT TABS — tabs.css
+   ============================================================ */
+
+.product-tabs-section {
+  padding: 40px 0 0;
+  margin-top: 40px;
+  border-top: 1px solid var(--color-border);
+}
+
+/* ── Tab nav ── */
+.tab-list {
+  display: flex;
+  gap: 0;
+  border-bottom: 2px solid var(--color-border);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.tab-list::-webkit-scrollbar {
+  display: none;
+}
+
+.tab-btn {
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  border: none;
+  background: none;
+  cursor: pointer;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+  font-family: var(--font-family);
+}
+
+.tab-btn:hover {
+  color: var(--color-primary);
+}
+
+.tab-btn.active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+/* ── Tab panels ── */
+.tab-content {
+  padding: 28px 0 48px;
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+/* ── Specification table ── */
+.specs-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+
+.specs-table tr {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.specs-table tr:last-child {
+  border-bottom: none;
+}
+
+.specs-table td {
+  padding: 12px 16px;
+  font-size: 14px;
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+.specs-table td:first-child {
+  font-weight: 600;
+  color: var(--color-dark);
+  width: 200px;
+  background: var(--color-gray-50);
+  border-right: 1px solid var(--color-border);
+}
+
+.specs-table td:last-child {
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 480px) {
+  .specs-table td:first-child {
+    width: 120px;
+    font-size: 12px;
+  }
+
+  .specs-table td:last-child {
+    font-size: 13px;
+  }
+}
+
+/* ── Description panel ── */
+.tab-desc-content {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--color-text-muted);
+  max-width: 760px;
+}
+
+.tab-desc-content p + p {
+  margin-top: 14px;
+}
+
+/* ── Reviews panel ── */
+.tab-reviews-empty {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  padding: 16px 0;
+}
