@@ -1,0 +1,134 @@
+/* css/product-list/product-card.css */
+
+.pl-card {
+  background: white;
+  border: 1px solid var(--color-border-light);
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+
+.pl-card:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  transform: translateY(-4px);
+}
+
+.pl-card-img {
+  width: 100%;
+  aspect-ratio: 1;
+  background: #F9FAFB;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.pl-card-img img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+.pl-card:hover .pl-card-img img {
+  transform: scale(1.05);
+}
+
+.pl-card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-dark);
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.pl-card-price-row {
+  margin-bottom: 4px;
+}
+
+.pl-price {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--color-dark);
+}
+
+.pl-card-old-price-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  min-height: 20px;
+}
+
+.pl-old-price {
+  font-size: 13px;
+  color: var(--color-gray-400);
+  text-decoration: line-through;
+}
+
+.pl-discount-badge {
+  font-size: 11px;
+  font-weight: 600;
+  color: #10B981;
+  background: #D1FAE5;
+  padding: 2px 8px;
+  border-radius: 99px;
+}
+
+.pl-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+.btn-shop-now {
+  flex: 1;
+  text-align: center;
+  padding: 10px 0;
+  border: 1px solid var(--color-border);
+  border-radius: 99px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-dark);
+  transition: all 0.2s;
+}
+
+.btn-shop-now:hover {
+  background: var(--color-gray-50);
+}
+
+.btn-shop-now.primary {
+  background: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+.btn-shop-now.primary:hover {
+  background: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+}
+
+.btn-add-cart {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  color: var(--color-gray-600);
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.btn-add-cart:hover {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
