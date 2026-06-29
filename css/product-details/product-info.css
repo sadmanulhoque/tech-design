@@ -8,6 +8,25 @@
   gap: 20px;
 }
 
+/* ── Title Group ── */
+.title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0px; 
+}
+
+/* ── Brand ── */
+.product-brand {
+  margin-bottom: -12px;
+}
+
+.brand-image {
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
 /* ── Title ── */
 .product-title {
   font-size: 26px;
