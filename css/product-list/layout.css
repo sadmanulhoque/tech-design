@@ -76,6 +76,11 @@
   border-color: var(--color-gray-400);
 }
 
+/* Filter button — mobile only, hidden on desktop */
+.filter-btn {
+  display: none;
+}
+
 .products-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -90,13 +95,42 @@
 }
 
 @media (max-width: 767px) {
+  .page-title {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  .product-list-top {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .filter-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: var(--color-dark);
+    color: white;
+    border: none;
+    border-radius: 99px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .filter-btn i {
+    font-size: 14px;
+  }
+
   .products-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
 }
 
 @media (max-width: 480px) {
   .products-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
