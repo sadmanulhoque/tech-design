@@ -49,6 +49,12 @@
   padding: 20px 0 48px;
 }
 
+@media (max-width: 768px) {
+  .product-detail-section {
+    padding-bottom: 120px;
+  }
+}
+
 /* ── Two-column grid ── */
 .product-detail-grid {
   display: grid;
