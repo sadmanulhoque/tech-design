@@ -107,6 +107,23 @@
   cursor: pointer;
 }
 
+/* Plain link-style filter items (Category, Brands) */
+.filter-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.filter-link-item {
+  font-size: 14px;
+  color: var(--color-dark);
+  transition: color 0.2s;
+}
+
+.filter-link-item:hover {
+  color: var(--color-primary);
+}
+
 /* ── Mobile Drawer ── */
 @media (max-width: 991px) {
   .product-sidebar {
