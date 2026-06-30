@@ -71,14 +71,16 @@
     grid-template-columns: 1fr;
   }
 
-  /* Sidebar (and the desktop title inside it) is hidden,
-     so show the mobile title row instead */
   .mobile-title-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 12px;
     margin-bottom: 20px;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
