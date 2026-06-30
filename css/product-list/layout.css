@@ -49,14 +49,7 @@
   margin-bottom: 24px;
 }
 
-.showing-text {
-  font-size: 15px;
-  color: var(--color-dark);
-}
 
-.showing-text strong {
-  font-weight: 700;
-}
 
 /* Filter button — mobile only */
 .filter-btn {
