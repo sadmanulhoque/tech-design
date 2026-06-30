@@ -36,9 +36,15 @@
   margin-bottom: 24px;
 }
 
-/* Mobile-only page title — hidden on desktop by default */
-.page-title-mobile {
+/* Mobile-only title + filter button row — hidden on desktop */
+.mobile-title-row {
   display: none;
+}
+
+.page-title-mobile {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--color-dark);
 }
 
 .product-list-layout {
@@ -46,13 +52,6 @@
   grid-template-columns: 260px 1fr;
   gap: 32px;
   align-items: start;
-}
-
-.product-list-top {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin-bottom: 24px;
 }
 
 /* Filter button — mobile only */
@@ -73,12 +72,12 @@
   }
 
   /* Sidebar (and the desktop title inside it) is hidden,
-     so show the standalone mobile title instead */
-  .page-title-mobile {
-    display: block;
-    font-size: 28px;
-    font-weight: 800;
-    color: var(--color-dark);
+     so show the mobile title row instead */
+  .mobile-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
     margin-bottom: 20px;
   }
 }
@@ -86,7 +85,6 @@
 @media (max-width: 767px) {
   .page-title-mobile {
     font-size: 24px;
-    margin-bottom: 16px;
   }
 
   .filter-btn {
@@ -101,6 +99,8 @@
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
+    flex-shrink: 0;
+    white-space: nowrap;
   }
 
   .products-grid {
