@@ -28,11 +28,17 @@
   font-weight: 500;
 }
 
+/* Desktop page title — lives inside .product-sidebar */
 .page-title {
   font-size: 32px;
   font-weight: 800;
   color: var(--color-dark);
-  margin-bottom: 32px;
+  margin-bottom: 24px;
+}
+
+/* Mobile-only page title — hidden on desktop by default */
+.page-title-mobile {
+  display: none;
 }
 
 .product-list-layout {
@@ -44,12 +50,10 @@
 
 .product-list-top {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   margin-bottom: 24px;
 }
-
-
 
 /* Filter button — mobile only */
 .filter-btn {
@@ -67,10 +71,20 @@
   .product-list-layout {
     grid-template-columns: 1fr;
   }
+
+  /* Sidebar (and the desktop title inside it) is hidden,
+     so show the standalone mobile title instead */
+  .page-title-mobile {
+    display: block;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--color-dark);
+    margin-bottom: 20px;
+  }
 }
 
 @media (max-width: 767px) {
-  .page-title {
+  .page-title-mobile {
     font-size: 24px;
     margin-bottom: 16px;
   }
