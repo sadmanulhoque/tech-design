@@ -82,6 +82,28 @@
   height: 100%;
 }
 
+
+/* Equal-height fix: Slick doesn't stretch slides to match the
+   tallest one by default, so a card with a discount row (badge +
+   old price) ends up taller than a card without one. Forcing the
+   track into a stretched flex row makes every slide — and every
+   .product-card inside it — the same height. */
+.new-trends-slick .slick-track {
+  display: flex !important;
+  align-items: stretch !important;
+}
+
+.new-trends-slick .slick-slide {
+  height: auto !important;
+}
+
+/* Equal-height fix: Slick doesn't stretch slides to match the
+   tallest one by default, so a card with a discount row (badge +
+   old price) ends up taller than a card without one. Forcing the
+   track into a stretched flex row makes every slide — and every
+   .product-card inside it — the same height. */
+
+
 /* Hide default Slick controls — custom arrows above are used instead */
 .new-trends-slick .slick-prev,
 .new-trends-slick .slick-next,
