@@ -30,8 +30,28 @@
         }
 
         #wsus__cart_view {
-            padding-top: 65px;
+            padding-top: 40px;
             padding-bottom: 60px;
+        }
+
+        /* Breadcrumb */
+        .cart-breadcrumb {
+            font-size: 14px;
+            color: #525252;
+            margin-bottom: 24px;
+        }
+
+        .cart-breadcrumb a {
+            color: #525252;
+            text-decoration: none;
+        }
+
+        .cart-breadcrumb a:hover {
+            color: var(--primary);
+        }
+
+        .cart-breadcrumb span {
+            color: var(--dark);
         }
 
         .wsus__cart_list {
@@ -203,6 +223,13 @@
 
 <section id="wsus__cart_view">
     <div class="container">
+        
+        <!-- Breadcrumb -->
+        <div class="cart-breadcrumb">
+            <a href="/">Home</a> &gt; 
+            <a href="/cart">Cart</a>
+        </div>
+
         <div class="row">
             <!-- Cart Items -->
             <div class="col-xl-9">
