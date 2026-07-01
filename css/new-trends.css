@@ -245,18 +245,23 @@
   flex: 1;
   text-align: center;
   padding: 8px 0;
-  border: 1px solid var(--color-primary, #f97316);
+  border: 1px solid var(--color-border, #e5e7eb);
   border-radius: 99px;
   font-size: 14px;
   font-weight: 600;
-  color: #ffffff;
-  background: var(--color-primary, #f97316);
+  color: var(--color-dark, #111827);
+  background: #ffffff;
   transition: all 0.2s ease;
   text-decoration: none;
 }
 
 .new-trends-slick .btn-shop-now:hover {
   filter: brightness(1.05);
+}
+.new-trends-slick .product-card:hover .btn-shop-now {
+  background: var(--color-primary, #f97316);
+  border-color: var(--color-primary, #f97316);
+  color: #ffffff;
 }
 
 /* ============================================================
