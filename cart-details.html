@@ -49,7 +49,7 @@
         .wsus__cart_list table {
             width: 100%;
             border-collapse: collapse;
-            min-width: 900px; /* Forces horizontal scroll on small screens */
+            min-width: 920px;
         }
 
         .wsus__cart_list table thead tr {
@@ -64,7 +64,13 @@
         .wsus__cart_list table thead tr th {
             padding: 16px 12px;
             vertical-align: middle;
+            border-right: 1px solid var(--border);
             white-space: nowrap;
+        }
+
+        .wsus__cart_list table tbody tr td:last-child,
+        .wsus__cart_list table thead tr th:last-child {
+            border-right: none;
         }
 
         /* Column widths */
@@ -100,6 +106,10 @@
             color: var(--dark);
         }
 
+        .wsus__pro_name a:hover {
+            color: var(--primary);
+        }
+
         .wsus__pro_name span {
             font-size: 14px;
             color: #525252;
@@ -133,7 +143,6 @@
             font-size: 22px;
         }
 
-        /* Clear Cart Button - Smaller */
         .clear-cart-btn {
             background: var(--primary);
             color: white;
