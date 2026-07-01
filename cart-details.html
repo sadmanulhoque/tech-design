@@ -3,210 +3,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart - Your Store</title>
+    <title>Cart - TechGadget</title>
     
     <!-- Bootstrap 5 CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
         :root {
-            --primary: #0d6efd;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+            --primary: #F27F20;
+            --primary-hover: #E36313;
+            --dark: #292929;
+            --border: #E5E5E5;
+            --radius: 12px;
         }
 
         body {
-            font-family: "Poppins", sans-serif;
-            background: #f8f9fa;
-            color: #333;
+            font-family: 'Inter', sans-serif;
+            background: #FAFAFA;
+            color: #292929;
         }
 
         #wsus__cart_view {
             padding-top: 65px;
-            padding-bottom: 50px;
+            padding-bottom: 60px;
         }
 
         .wsus__cart_list {
             background: #fff;
-            border-radius: 5px;
+            border-radius: var(--radius);
             overflow: hidden;
-            box-shadow: rgb(50 50 93 / 15%) 0px 0px 5px 0px;
+            box-shadow: 0 12px 16px -4px rgba(0,0,0,0.08);
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
         }
 
         .wsus__cart_list table {
             width: 100%;
             border-collapse: collapse;
-            table-layout: fixed;
+            min-width: 900px; /* Forces horizontal scroll on small screens */
         }
 
         .wsus__cart_list table thead tr {
-            background: #def0ff;
+            background: #F8F9FA;
         }
 
         .wsus__cart_list table tbody tr {
-            border-top: 1px solid #eee;
+            border-top: 1px solid var(--border);
         }
 
         .wsus__cart_list table tbody tr td,
         .wsus__cart_list table thead tr th {
-            padding: 14px 8px;
+            padding: 16px 12px;
             vertical-align: middle;
             white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
         }
 
         /* Column widths */
-        .wsus__pro_img { width: 135px; min-width: 135px; }
-        .wsus__pro_name { width: 310px; min-width: 310px; text-align: left !important; }
-        .wsus__pro_status { width: 135px; min-width: 135px; }
-        .wsus__pro_select { width: 175px; min-width: 175px; }
-        .wsus__pro_icon { width: 115px; min-width: 115px; text-align: center; }
+        .wsus__pro_img { width: 130px; min-width: 130px; }
+        .wsus__pro_name { width: 320px; min-width: 320px; text-align: left !important; }
+        .wsus__pro_status { width: 140px; min-width: 140px; }
+        .wsus__pro_select { width: 170px; min-width: 170px; }
+        .wsus__pro_icon { width: 100px; min-width: 100px; text-align: center; }
 
         .wsus__cart_list table thead tr th {
-            color: #333;
-            font-weight: 500;
+            color: #292929;
+            font-weight: 600;
             font-size: 15px;
-            text-transform: capitalize;
-            white-space: nowrap;
         }
 
         .wsus__cart_list .wsus__pro_img img {
             width: 100%;
             height: 125px;
             object-fit: cover;
-            border-radius: 6px;
+            border-radius: 10px;
         }
 
-        /* Product Name - Force Single Line */
         .wsus__pro_name p {
-            margin: 0 0 5px 0;
-            font-weight: 500;
-            color: #0d6efd;
+            margin: 0 0 6px 0;
+            font-weight: 600;
+            color: var(--dark);
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
 
         .wsus__pro_name a {
-            color: #0d6efd;
-            text-decoration: none;
+            color: var(--dark);
         }
 
         .wsus__pro_name span {
             font-size: 14px;
-            color: #555;
+            color: #525252;
         }
 
         .wsus__pro_status p {
-            font-size: 15px;
-            font-weight: 500;
-            color: #0d6efd;
-            margin: 0;
-            white-space: nowrap;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--dark);
         }
 
         .qty-input {
             width: 52px;
-            height: 38px;
-            border: 1px solid #ddd;
+            height: 40px;
+            border: 1px solid var(--border);
             font-size: 16px;
             text-align: center;
+            border-radius: 8px;
         }
 
         .qty-btn {
-            width: 32px;
-            height: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            font-weight: bold;
-            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
         }
 
         .wsus__pro_icon a {
-            color: #333;
-            font-size: 20px;
-            transition: all 0.3s ease;
+            color: #525252;
+            font-size: 22px;
         }
 
-        .wsus__pro_icon a:hover {
-            color: #ed1b35;
-        }
-
-        /* Clear Cart Button */
+        /* Clear Cart Button - Smaller */
         .clear-cart-btn {
-            background: #0d6efd;
+            background: var(--primary);
             color: white;
             border: none;
-            padding: 9px 22px;
-            border-radius: 8px;
-            font-weight: 500;
-            font-size: 15px;
+            padding: 8px 20px;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 14px;
             white-space: nowrap;
-            box-shadow: 0 2px 5px rgba(13, 110, 253, 0.3);
         }
 
         .clear-cart-btn:hover {
-            background: #0b5ed7;
+            background: var(--primary-hover);
         }
 
         /* Cart Summary */
         .wsus__cart_list_footer_button {
             background: #fff;
-            border-radius: 5px;
-            padding: 20px;
-            box-shadow: rgb(50 50 93 / 15%) 0px 0px 5px 0px;
+            border-radius: var(--radius);
+            padding: 24px;
+            box-shadow: 0 12px 16px -4px rgba(0,0,0,0.08);
         }
 
         .wsus__cart_list_footer_button h6 {
             font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 15px;
-            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 16px;
         }
 
         .wsus__cart_list_footer_button p {
             display: flex;
             justify-content: space-between;
             font-size: 16px;
-            margin: 8px 0;
+            margin: 10px 0;
         }
 
         .wsus__cart_list_footer_button .total {
-            border-top: 2px solid #def0ff;
-            padding-top: 12px;
-            font-size: 18px;
+            border-top: 2px solid var(--border);
+            padding-top: 16px;
+            font-size: 19px;
             font-weight: 700;
         }
 
         .common_btn {
             display: block;
             width: 100%;
-            padding: 12px;
-            border-radius: 4px;
+            padding: 14px;
+            border-radius: 9999px;
             text-align: center;
-            font-weight: 500;
-            margin-top: 10px;
+            font-weight: 600;
+            margin-top: 12px;
             text-decoration: none;
-            color: white;
-        }
-
-        .common_btn:hover {
-            opacity: 0.9;
+            font-size: 15px;
         }
     </style>
 </head>
@@ -228,7 +208,7 @@
                                     <th class="wsus__pro_status">Total Price</th>
                                     <th class="wsus__pro_select">Quantity</th>
                                     <th class="wsus__pro_icon">
-                                        <button onclick="alert('Cart Cleared!')" class="clear-cart-btn">Clear Cart</button>
+                                        <button class="clear-cart-btn">Clear Cart</button>
                                     </th>
                                 </tr>
                             </thead>
@@ -249,10 +229,10 @@
                                         <p>৳ 300</p>
                                     </td>
                                     <td class="wsus__pro_select">
-                                        <div class="d-flex align-items-center justify-content-center gap-1">
-                                            <button class="btn btn-danger qty-btn">-</button>
-                                            <input type="number" value="1" class="qty-input form-control" readonly>
-                                            <button class="btn btn-success qty-btn">+</button>
+                                        <div class="d-flex align-items-center justify-content-center gap-2">
+                                            <button class="btn btn-outline-danger qty-btn">-</button>
+                                            <input type="number" value="1" class="qty-input" readonly>
+                                            <button class="btn btn-outline-success qty-btn">+</button>
                                         </div>
                                     </td>
                                     <td class="wsus__pro_icon">
@@ -266,7 +246,7 @@
                                         <img src="https://picsum.photos/id/201/300/300" alt="product">
                                     </td>
                                     <td class="wsus__pro_name">
-                                        <p><a href="#">Premium Cotton Frock (B-0B56) Long Product Name Example Here</a></p>
+                                        <p><a href="#">Premium Cotton Frock (B-0B56) Long Product Name Example</a></p>
                                         <span>Size: 16 (+৳ 0)</span>
                                     </td>
                                     <td class="wsus__pro_status">
@@ -276,10 +256,10 @@
                                         <p>৳ 300</p>
                                     </td>
                                     <td class="wsus__pro_select">
-                                        <div class="d-flex align-items-center justify-content-center gap-1">
-                                            <button class="btn btn-danger qty-btn">-</button>
-                                            <input type="number" value="1" class="qty-input form-control" readonly>
-                                            <button class="btn btn-success qty-btn">+</button>
+                                        <div class="d-flex align-items-center justify-content-center gap-2">
+                                            <button class="btn btn-outline-danger qty-btn">-</button>
+                                            <input type="number" value="1" class="qty-input" readonly>
+                                            <button class="btn btn-outline-success qty-btn">+</button>
                                         </div>
                                     </td>
                                     <td class="wsus__pro_icon">
@@ -298,9 +278,9 @@
                     <h6>Total Cart</h6>
                     <p>Total: <span class="sub_total">৳ 600</span></p>
 
-                    <a href="#" class="common_btn" style="background:#0d6efd;">Checkout</a>
-                    <a href="#" class="common_btn" style="background:#0d6efd;">
-                        <i class="fas fa-shopping-bag"></i> Go Shop
+                    <a href="#" class="common_btn" style="background:var(--primary); color:white;">Checkout</a>
+                    <a href="#" class="common_btn" style="background:#292929; color:white;">
+                        <i class="fas fa-shopping-bag"></i> Continue Shopping
                     </a>
                 </div>
             </div>
